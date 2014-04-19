@@ -1,4 +1,6 @@
-/* Your app's CSS, go crazy, make it your own */
+
+@import url('font-awesome.css');
+
 
 .ionic-logo {
   display: block;
