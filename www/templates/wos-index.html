@@ -1,47 +1,45 @@
-<!-- 
-  This template gets placed in the grumpy tab's <ion-nav-view> directive.
-  It was wired up in the app config (app.js) 
-  The 'grumpys' data comes from its $scope within grumpyIndexCtrl (controller.js)
--->
-<ion-view title="List">
 
-    <ion-content has-header="true" has-tabs="true">
+<ion-header-bar class="bar-positive">
+    <button class="button button-clear" ng-click="newTask()">New</button>
+    <h1 class="title">List</h1>
+</ion-header-bar>
+<ion-content has-header="true" has-tabs="true">
 
-        <ion-list>
+    <ion-list>
 
-            <ion-item ng-repeat="grumpy in grumpys" type="item-text-wrap" href="#/tab/pet/{{grumpy.id}}">
-                <!-- make this as directive : BEGIN -->
-                <div class="wos-item-content">
-                    <div class="row wos-grumpy-info">
-                        <div class="col col-15 wos-avatar"><img src="{{grumpy.avatar}}"/></div>
-                        <div class="col col-70 wos-info">
-                            <div class="col col-top wos-name">{{grumpy.nickname}}</div>
-                            <div class="col col-bottom wos-location"><i class="fa fa-map-marker"></i>&nbsp;{{grumpy.location}}
-                            </div>
+        <ion-item ng-repeat="grumpy in grumpys" type="item-text-wrap" href="#/tab/pet/{{grumpy.id}}">
+            <!-- make this as directive : BEGIN -->
+            <div class="wos-item-content">
+                <div class="row wos-grumpy-info">
+                    <div class="col col-15 wos-avatar"><img src="{{grumpy.avatar}}"/></div>
+                    <div class="col col-70 wos-info">
+                        <div class="col col-top wos-name">{{grumpy.nickname}}</div>
+                        <div class="col col-bottom wos-location"><i class="fa fa-map-marker"></i>&nbsp;{{grumpy.location}}
                         </div>
-                        <div class="col col-15 wos-time"><i class="fa fa-clock-o"></i>&nbsp;{{grumpy.timestamp}}</div>
-
                     </div>
-                    <div class="wos-media">
-                        <img src="{{grumpy.image}}"/>
-                        <!--
-                        <figure class="cap-bot">
+                    <div class="col col-15 wos-time"><i class="fa fa-clock-o"></i>&nbsp;{{grumpy.timestamp}}</div>
 
-                        <figcaption>
-                                    yay!!!
-                                    {{grumpy.description}}
-                            </figcaption>
-                        </figure>-->
-                    </div>
-                    <div class="wos-social">
-                        <div class="col col-20 wos-note"><img src="img/btn_active_{{grumpy.idisliked}}.png"/>&nbsp;{{grumpy.counter}}</div>
+                </div>
+                <div class="wos-media">
+                    <img src="{{grumpy.image}}"/>
+                    <!--
+                    <figure class="cap-bot">
+
+                    <figcaption>
+                                yay!!!
+                                {{grumpy.description}}
+                        </figcaption>
+                    </figure>-->
+                </div>
+                <div class="wos-social">
+                    <div class="col col-20 wos-note"><img src="img/btn_active_{{grumpy.idisliked}}.png"/>&nbsp;{{grumpy.counter}}
                     </div>
                 </div>
-                <!-- make this as directive : END-->
+            </div>
+            <!-- make this as directive : END-->
 
-            </ion-item>
+        </ion-item>
 
-        </ion-list>
+    </ion-list>
 
-    </ion-content>
-</ion-view>
+</ion-content>
