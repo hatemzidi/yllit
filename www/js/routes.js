@@ -37,6 +37,16 @@ define(['angular', 'app'], function (angular, app) {
                 }
             })
 
+            .state('tab.map', {
+                url: '/map',
+                views: {
+                    'posts-tab': {
+                        templateUrl: 'templates/map.html',
+                        controller: 'WoSMapCtrl'
+                    }
+                }
+            })
+
             .state('tab.profile', {
                 url: '/profile',
                 views: {
@@ -50,7 +60,8 @@ define(['angular', 'app'], function (angular, app) {
                 url: '/camera',
                 views: {
                     'camera-tab': {
-                        templateUrl: 'templates/camera.html'
+                        templateUrl: 'templates/camera.html',
+                        controller: 'WoSCamCtrl'
                     }
                 }
             });

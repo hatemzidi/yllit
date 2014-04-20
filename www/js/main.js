@@ -7,7 +7,8 @@ require.config({
         angularSanitize: '../lib/ionic/js/angular/angular-sanitize',
         uiRouter: '../lib/ionic/js/angular-ui/angular-ui-router',
         ionic: '../lib/ionic/js/ionic',
-        angularIonic: '../lib/ionic/js/ionic-angular'
+        angularIonic: '../lib/ionic/js/ionic-angular',
+        'async': '../lib/ionic/js/async'
     },
     shim: {
         'angular': {'exports': 'angular'},

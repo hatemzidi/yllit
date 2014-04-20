@@ -1,0 +1,15 @@
+<ion-view title="Location" >
+
+    <ion-nav-buttons side="left">
+        <ion-nav-button class="button button-icon icon ion-chevron-left"
+                             ng-click="goBack()">
+        </ion-nav-button>
+    </ion-nav-buttons>
+
+<ion-content has-header="true" scroll="false">
+    <div id="map"></div>
+</ion-content>
+    <ion-footer-bar class="bar-dark">
+        <a ng-click="centerOnMe()" class="button button-icon icon ion-navigate">Find Me</a>
+    </ion-footer-bar>
+</ion-view>
