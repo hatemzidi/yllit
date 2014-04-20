@@ -1,5 +1,9 @@
 @import url('font-awesome.css');
 
+/*body {
+    cursor: url('../img/finger.png'), auto;
+}*/
+
 .ionic-logo {
     display: block;
     margin: 15px auto;

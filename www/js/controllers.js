@@ -1,17 +1,35 @@
 define(['angular'], function (angular) {
-	return angular.module('WoS.controllers', [])
+    return angular.module('WoS.controllers', [])
+
+        // get all data
+        .controller('WoSPostsIndexCtrl', function ($scope, dataService) {
+            $scope.posts = dataService.all();
 
 
-	// A simple controller that fetches a list of data from a service
-	.controller('WoSIndexCtrl', function($scope, dataService) {
-	  // "Pets" is a service returning mock data (services.js)
-	  $scope.grumpys = dataService.all();
-	})
+            $scope.rightButtons = [{
+                type: 'button-icon icon ion-plus',
+                tap: function(e) {
+                    $state.go('main.manageMember', { 'membersId' : 'new' });
+                }
+            }];
 
 
-	// A simple controller that shows a tapped item's data
-	.controller('WoSDetailCtrl', function($scope, $stateParams, dataService) {
-	  // "Pets" is a service returning mock data (services.js)
-	  $scope.grumpy = dataService.get($stateParams.petId);
-	});
+        })
+
+        // get data for a given post
+        .controller('WoSPostDetailCtrl', function ($scope, $stateParams, $ionicNavBarDelegate, dataService) {
+            $scope.post = dataService.get($stateParams.postId);
+
+            $scope.leftButtons = [{
+                type: 'button-icon icon ion-home',
+                tap: function(e) {
+                    $state.go('main.home', { 'membersId' : 'new' });
+                }
+            }];
+
+            $scope.back = function () {
+                console.log('here')
+                $ionicNavBarDelegate.back();
+            };
+        });
 });

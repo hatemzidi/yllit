@@ -17,31 +17,31 @@ define(['angular', 'app'], function (angular, app) {
             })
 
             // the pet tab has its own child nav-view and history
-            .state('tab.pet-index', {
-                url: '/pets',
+            .state('tab.posts-index', {
+                url: '/posts',
                 views: {
-                    'pets-tab': {
+                    'posts-tab': {
                         templateUrl: 'templates/wos-index.html',
-                        controller: 'WoSIndexCtrl'
+                        controller: 'WoSPostsIndexCtrl'
                     }
                 }
             })
 
-            .state('tab.pet-detail', {
-                url: '/pet/:petId',
+            .state('tab.post-detail', {
+                url: '/post/:postId',
                 views: {
-                    'pets-tab': {
-                        templateUrl: 'templates/pet-detail.html',
-                        controller: 'WoSDetailCtrl'
+                    'posts-tab': {
+                        templateUrl: 'templates/post-detail.html',
+                        controller: 'WoSPostDetailCtrl'
                     }
                 }
             })
 
-            .state('tab.adopt', {
-                url: '/adopt',
+            .state('tab.profile', {
+                url: '/profile',
                 views: {
-                    'adopt-tab': {
-                        templateUrl: 'templates/adopt.html'
+                    'profile-tab': {
+                        templateUrl: 'templates/profile.html'
                     }
                 }
             })
@@ -56,7 +56,7 @@ define(['angular', 'app'], function (angular, app) {
             });
 
         // if none of the above states are matched, use this as the fallback
-        $urlRouterProvider.otherwise('/tab/pets');
+        $urlRouterProvider.otherwise('/tab/posts');
 
     })
 });
