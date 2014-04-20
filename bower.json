@@ -1,0 +1,30 @@
+{
+  "name": "mobileapp",
+  "version": "0.0.1",
+  "homepage": "https://github.com/hatemzidi/WoS-mobile",
+  "authors": [
+    "hatem.zidi <hatem.zidi@gmail.com>"
+  ],
+  "main": "main.js",
+  "keywords": [
+    "WoS",
+    "mobile"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "www/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ionic": "driftyco/ionic-bower#master",
+    "requirejs-plugins": "~1.0.2",
+    "requirejs": "~2.1.11",
+    "angular-touch": "~1.2.16",
+    "fontawesome": "~4.0.3"
+  }
+}

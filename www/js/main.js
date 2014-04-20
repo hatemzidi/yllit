@@ -1,14 +1,14 @@
 require.config({
     paths: {
         cordova: '../cordova',
-        angular: '../lib/ionic/js/angular/angular',
-        angularAnimate: '../lib/ionic/js/angular/angular-animate',
-        angularTouch: '../lib/ionic/js/angular/angular-touch',
-        angularSanitize: '../lib/ionic/js/angular/angular-sanitize',
-        uiRouter: '../lib/ionic/js/angular-ui/angular-ui-router',
+        angular: '../lib/angular/angular',
+        angularAnimate: '../lib/angular-animate/angular-animate',
+        angularTouch: '../lib/angular-touch/angular-touch',
+        angularSanitize: '../lib/angular-sanitize/angular-sanitize',
+        uiRouter: '../lib/angular-ui-router/release/angular-ui-router',
         ionic: '../lib/ionic/js/ionic',
         angularIonic: '../lib/ionic/js/ionic-angular',
-        'async': '../lib/ionic/js/async'
+        async: '../lib/requirejs-plugins/src/async'
     },
     shim: {
         'angular': {'exports': 'angular'},
