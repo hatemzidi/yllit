@@ -13,13 +13,25 @@ define(['angular', 'async!http://maps.google.com/maps/api/js?key=AIzaSyB16sGmIek
         })
 
         // get all data
-        .controller('WoSPostsIndexCtrl', function ($scope, $state, dataService) {
+        .controller('WoSPostsIndexCtrl', function ($scope, $state, $timeout, dataService) {
             $scope.posts = dataService.all();
 
             $scope.getMap = function () {
                 $state.go('tab.map');
             };
 
+            $scope.doRefresh = function() {
+
+                console.log('Refreshing!');
+                $timeout( function() {
+
+                    $scope.posts = dataService.all();
+                    //Stop the ion-refresher from spinning
+                    $scope.$broadcast('scroll.refreshComplete');
+
+                }, 1000);
+
+            };
         })
 
         // get data for a given post
