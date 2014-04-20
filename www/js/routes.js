@@ -21,8 +21,8 @@ define(['angular', 'app'], function (angular, app) {
                 url: '/pets',
                 views: {
                     'pets-tab': {
-                        templateUrl: 'templates/pet-index.html',
-                        controller: 'PetIndexCtrl'
+                        templateUrl: 'templates/wos-index.html',
+                        controller: 'WoSIndexCtrl'
                     }
                 }
             })
@@ -32,7 +32,7 @@ define(['angular', 'app'], function (angular, app) {
                 views: {
                     'pets-tab': {
                         templateUrl: 'templates/pet-detail.html',
-                        controller: 'PetDetailCtrl'
+                        controller: 'WoSDetailCtrl'
                     }
                 }
             })
@@ -46,11 +46,11 @@ define(['angular', 'app'], function (angular, app) {
                 }
             })
 
-            .state('tab.about', {
-                url: '/about',
+            .state('tab.camera', {
+                url: '/camera',
                 views: {
-                    'about-tab': {
-                        templateUrl: 'templates/about.html'
+                    'camera-tab': {
+                        templateUrl: 'templates/camera.html'
                     }
                 }
             });

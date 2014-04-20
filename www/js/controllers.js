@@ -3,15 +3,15 @@ define(['angular'], function (angular) {
 
 
 	// A simple controller that fetches a list of data from a service
-	.controller('PetIndexCtrl', function($scope, PetService) {
+	.controller('WoSIndexCtrl', function($scope, dataService) {
 	  // "Pets" is a service returning mock data (services.js)
-	  $scope.pets = PetService.all();
+	  $scope.grumpys = dataService.all();
 	})
 
 
 	// A simple controller that shows a tapped item's data
-	.controller('PetDetailCtrl', function($scope, $stateParams, PetService) {
+	.controller('WoSDetailCtrl', function($scope, $stateParams, dataService) {
 	  // "Pets" is a service returning mock data (services.js)
-	  $scope.pet = PetService.get($stateParams.petId);
+	  $scope.grumpy = dataService.get($stateParams.petId);
 	});
 });

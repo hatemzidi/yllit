@@ -1,15 +1,65 @@
-
 @import url('font-awesome.css');
 
-
 .ionic-logo {
-  display: block;
-  margin: 15px auto;
-  width: 96px;
-  height: 96px;
+    display: block;
+    margin: 15px auto;
+    width: 96px;
+    height: 96px;
 }
 
 .item-body > p {
     margin-top: 0;
     margin-bottom: 4px;
+}
+
+.col-15 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 15%;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 15%;
+    -ms-flex: 0 0 15%;
+    flex: 0 0 15%;
+    max-width: 15%;
+}
+
+.col-70 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 70%;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 70%;
+    -ms-flex: 0 0 70%;
+    flex: 0 0 70%;
+    max-width: 70%;
+}
+
+.wos-grumpy-info {
+    font-size: 13px;
+}
+
+.wos-info > div {
+    padding: 0 5px !important;
+}
+
+.wos-grumpy-info .wos-avatar img {
+    width: 40px;
+    height: 40px;
+    -webkit-border-radius: 11px;
+    float: left
+}
+
+.wos-item-content .wos-media {
+    clear: both;
+}
+
+a.item-content {
+    padding: 15px 0 !important;
+}
+
+.wos-note {
+    margin-left: 10px;
+    font-size: 13px;
+}
+
+.wos-note img {
+    vertical-align: middle;
 }
