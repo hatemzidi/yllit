@@ -36,7 +36,7 @@
     max-width: 70%;
 }
 
-.wos-grumpy-info {
+/*.wos-grumpy-info {
     font-size: 13px;
 }
 
@@ -54,7 +54,7 @@
 .wos-item-content .wos-media {
     clear: both;
 }
-
+*/
 a.item-content {
     padding: 0 !important;
 }
@@ -79,9 +79,39 @@ a.item-content {
 
 /* hide extra space in pull to refresh */
 .text-refreshing, .text-pulling {
-    display : none !important;
+    display: none !important;
 }
 
 .clear-search {
     font-size: 25px;
+}
+
+.post.card {
+    margin: 0px !important;
+}
+
+.post.card .item-body {
+    padding: 0px !important;
+}
+
+.post.card .item-avatar p {
+    margin: 0px !important;
+    font-size: 13px !important;
+}
+
+.post.card .info {
+    float: left;
+}
+
+.post.card p.location , .post.card  p.location a {
+    color: #006699;
+}
+
+.post.card .info p.location a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.post.card .time {
+    float: right;
 }

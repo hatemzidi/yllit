@@ -25,35 +25,35 @@
         <ion-list>
 
             <ion-item ng-repeat="post in posts" type="item-text-wrap" href="#/tab/post/{{post.id}}">
-                <!-- make this as directive : BEGIN -->
-                <div class="wos-item-content">
-                    <div class="row wos-grumpy-info">
-                        <div class="col col-15 wos-avatar"><img src="{{post.grumpy.avatar}}"/></div>
-                        <div class="col col-70 wos-info">
-                            <div class="col col-top wos-name">{{post.grumpy.nickname}}</div>
-                            <div class="col col-bottom wos-location"><i class="fa fa-map-marker"></i>&nbsp;{{post.location}}
-                            </div>
-                        </div>
-                        <div class="col col-15 wos-time"><i class="fa fa-clock-o"></i>&nbsp;{{post.timestamp}}</div>
 
-                    </div>
-                    <div class="wos-media">
-                        <img src="{{post.image}}"/>
-                        <!--
-                        <figure class="cap-bot">
+                <div class="list card post">
 
-                        <figcaption>
-                                    yay!!!
-                                    {{grumpy.description}}
-                            </figcaption>
-                        </figure>-->
-                    </div>
-                    <div class="wos-social">
-                        <div class="col col-20 wos-note"><img src="img/btn_active_{{post.idisliked}}.png"/>&nbsp;{{post.counter}}
+                    <div class="item item-avatar">
+                        <img src="{{post.grumpy.avatar}}"/>
+
+                        <div class="info">
+                            <p>{{post.grumpy.nickname}}</p>
+
+                            <p class="location" ng-show="post.location.name"><i class="fa fa-map-marker"></i>&nbsp;<a ui-sref="tab.map({{post.id}})">{{post.location.name}}</a></p>
                         </div>
+                        <div class="time">
+                            <p><i class="fa fa-clock-o"></i>&nbsp;{{post.timestamp | timeAgo}}</p>
+                        </div>
+                    </div>
+
+                    <div class="item item-body">
+                        <img class="full-image" src="{{post.image}}">
+                    </div>
+
+                    <div class="item tabs tabs-secondary tabs-icon-right">
+                        <a class="tab-item wos-note" href="#">
+                            {{post.counter}} <img src="img/btn_active_{{post.idisliked}}.png"/>
+                        </a>
+                        <a class="tab-item" href="#">
+                            {{post.counter}} <i class="ion-chatboxes"></i>
+                        </a>
                     </div>
                 </div>
-                <!-- make this as directive : END-->
 
             </ion-item>
 

@@ -56,6 +56,11 @@ define(['angular',
         // get data for a given post
         .controller('WoSPostDetailCtrl', function ($scope, $stateParams, $ionicNavBarDelegate, dataService) {
             $scope.post = dataService.get($stateParams.postId);
+
+            $scope.gpMap = function (postId) {
+                $state.go('tab.map');
+            };
+
         })
 
         // get map
@@ -116,14 +121,6 @@ define(['angular',
                         alert('Unable to get location: ' + error.message);
                     }
                 });
-
-//                navigator.geolocation.getCurrentPosition(function (pos) {
-//                    $scope.partyMap.setZoom(11);
-//                    $scope.map.setCenter(new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude));
-//                    $scope.loading.hide();
-//                }, function (error) {
-//                    alert('Unable to get location: ' + error.message);
-//                });
             };
         })
 

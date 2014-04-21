@@ -38,7 +38,7 @@ define(['angular', 'app'], function (angular, app) {
             })
 
             .state('tab.map', {
-                url: '/map',
+                url: '/map/:postId',
                 views: {
                     'posts-tab': {
                         templateUrl: 'templates/map.html',
