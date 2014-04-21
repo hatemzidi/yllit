@@ -9,7 +9,7 @@ require.config({
         timeAgo : '../lib/angular-timeago/src/timeAgo',
         ionic: '../lib/ionic/js/ionic',
         angularIonic: '../lib/ionic/js/ionic-angular',
-        async: '../lib/requirejs-plugins/src/async'
+        async: '../lib/requirejs-plugins/src/async',
     },
     shim: {
         'angular': {'exports': 'angular'},
@@ -18,7 +18,6 @@ require.config({
         'angularSanitize': ['angular'],
         'uiRouter': ['angular'],
         'ionic': {'exports': 'ionic'},
-        'timeAgo': {'exports': 'timeAgo'},
         'angularIonic': ['angular', 'ionic', 'uiRouter', 'angularAnimate', 'angularTouch', 'angularSanitize']
     },
     priority: [

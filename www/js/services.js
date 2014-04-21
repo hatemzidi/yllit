@@ -183,9 +183,12 @@ define(['angular'], function (angular) {
                 all: function () {
                     return data;
                 },
-                get: function (Id) {
+                get: function (id) {
                     // Simple index lookup
-                    return data[Id];
+                    return data[id];
+                },
+                getCoords : function(id){
+                    return {latitude : data[id].location.latitude, longitude: data[id].location.longitude}
                 }
             }
         })

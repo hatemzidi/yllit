@@ -64,21 +64,21 @@ define(['angular',
         })
 
         // get map
-        .controller('WoSMapCtrl', function ($scope, $ionicNavBarDelegate, $ionicLoading, WoSMapUserLocation) {
+        .controller('WoSMapCtrl', function ($scope, $stateParams, $ionicNavBarDelegate, $ionicLoading, dataService, WoSMapUserLocation) {
             function initialize() {
 
                 var mapOptions = {
-                        center: new google.maps.LatLng(37.09024, -95.7128910),
-                        zoom: 4,
-                        mapTypeId: google.maps.MapTypeId.ROADMAP,
-                        disableDefaultUI: true,
-                        mapTypeControl: true,
-                        mapTypeControlOptions: {
-                            style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
-                            position: google.maps.ControlPosition.TOP_CENTER,
-                            mapTypeIds: [google.maps.MapTypeId.ROADMAP, google.maps.MapTypeId.SATELLITE]
-                        }
-                    };
+                    center: new google.maps.LatLng(37.09024, -95.7128910),
+                    zoom: 4,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP,
+                    disableDefaultUI: true,
+                    mapTypeControl: true,
+                    mapTypeControlOptions: {
+                        style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+                        position: google.maps.ControlPosition.TOP_CENTER,
+                        mapTypeIds: [google.maps.MapTypeId.ROADMAP, google.maps.MapTypeId.SATELLITE]
+                    }
+                };
                 var map = new google.maps.Map(document.getElementById("map"),
                     mapOptions);
 
@@ -86,13 +86,16 @@ define(['angular',
                 $scope.markers = [];
             }
 
-            if (!$scope.map) {
-                initialize()
-            }
-
+            //TODO is this the good place ?
             $scope.goBack = function () {
                 $ionicNavBarDelegate.back();
-            }
+            };
+
+
+            $scope.setMapPosition = function (postId) {
+                var position = dataService.getCoords(postId);
+                $scope.placeLocationMarker(position);
+            };
 
             $scope.centerOnMe = function () {
                 if (!$scope.map) {
@@ -104,13 +107,14 @@ define(['angular',
                     showBackdrop: false
                 });
 
-                WoSMapUserLocation.get(function(location){
+                WoSMapUserLocation.get(function (location) {
 
                     if (location) {
 
                         $scope.map.setCenter(location);
                         $scope.map.setZoom(11);
-                       // $scope.setUserLocation(location);
+//                        $scope.setUserLocation(location);
+                        $scope.placeUserLocationMarker(location);
                         $scope.loading.hide();
 
 //                        $scope.setSearchFormLocation(location, function(){
@@ -122,6 +126,40 @@ define(['angular',
                     }
                 });
             };
+
+            $scope.setUserLocation = function (val) {
+                $scope.userLocation = val;
+            }
+
+            $scope.placeUserLocationMarker = function (location) {
+                new google.maps.Marker({
+                    position: location,
+                    icon: new google.maps.MarkerImage('img/client-location.svg', null, null, null, new google.maps.Size(25, 25)),
+                    title: "Your location",
+                    map: $scope.map
+                });
+            };
+
+            $scope.placeLocationMarker = function (location) {
+                var pos = new google.maps.LatLng(location.latitude, location.longitude);
+
+                new google.maps.Marker({
+                    position: pos,
+                    icon: new google.maps.MarkerImage('img/marker.svg', null, null, null, new google.maps.Size(40, 40)),
+                    title: "POST LOCATION",
+                    map: $scope.map
+                });
+            };
+
+            if (!$scope.map) {
+                initialize()
+            }
+
+            if ($stateParams.postId) {
+                $scope.setMapPosition($stateParams.postId);
+            }
+
+
         })
 
         // inspired from : https://github.com/yafraorg/ionictests

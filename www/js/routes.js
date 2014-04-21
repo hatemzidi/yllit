@@ -48,7 +48,7 @@ define(['angular', 'app'], function (angular, app) {
             })
 
             .state('tab.profile', {
-                url: '/profile',
+                url: '/profile/:profileId',
                 views: {
                     'profile-tab': {
                         templateUrl: 'templates/profile.html'

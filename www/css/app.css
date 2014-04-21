@@ -55,9 +55,7 @@
     clear: both;
 }
 */
-a.item-content {
-    padding: 0 !important;
-}
+
 
 .wos-note {
     margin-left: 10px;
@@ -88,10 +86,12 @@ a.item-content {
 
 .post.card {
     margin: 0px !important;
+    padding: 0 !important;
 }
 
 .post.card .item-body {
     padding: 0px !important;
+    border : 0 !important;
 }
 
 .post.card .item-avatar p {
