@@ -1,4 +1,4 @@
-<ion-view title="Detail" hide-back-button="false">
+<ion-view title="Post" hide-back-button="false">
 
     <ion-nav-buttons side="left" ng-controller="WoSTabsCtrl">
         <ion-nav-button class="button button-icon icon ion-chevron-left"
@@ -7,7 +7,7 @@
     </ion-nav-buttons>
 
 <ion-content has-header="true">
-    <!-- make this as directive : BEGIN -->
+     <!--make this as directive : BEGIN-->
     <div class="wos-item-content">
         <div class="row wos-grumpy-info">
             <div class="col col-15 wos-avatar"><img src="{{post.grumpy.avatar}}"/></div>
@@ -36,5 +36,32 @@
         </div>
     </div>
     <!-- make this as directive : END-->
+
+
+
+<!--    <div class="list card">
+
+        <div class="item item-avatar">
+            <img src="{{post.grumpy.avatar}}"/>
+            <p>{{post.grumpy.nickname}}</p>
+            <p><i class="fa fa-map-marker"></i>&nbsp;{{post.location}}</p>
+        </div>
+
+        <div class="item item-body">
+            <img class="full-image" src="{{post.image}}">
+            <p>
+                {{grumpy.description}}
+            </p>
+        </div>
+
+        <div class="item tabs tabs-secondary tabs-icon-left">
+            <a class="tab-item" href="#">
+                {{post.counter}} <img src="img/btn_active_{{post.idisliked}}.png"/>
+            </a>
+        </div>
+
+    </div>-->
+
+
 </ion-content>
 </ion-view>

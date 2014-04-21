@@ -21,7 +21,7 @@ define(['angular', 'app'], function (angular, app) {
                 url: '/posts',
                 views: {
                     'posts-tab': {
-                        templateUrl: 'templates/wos-index.html',
+                        templateUrl: 'templates/posts-index.html',
                         controller: 'WoSPostsIndexCtrl'
                     }
                 }

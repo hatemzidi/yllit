@@ -21,14 +21,10 @@ define(['angular', 'async!http://maps.google.com/maps/api/js?key=AIzaSyB16sGmIek
             };
 
             $scope.doRefresh = function() {
-
-                console.log('Refreshing!');
                 $timeout( function() {
-
                     $scope.posts = dataService.all();
                     //Stop the ion-refresher from spinning
                     $scope.$broadcast('scroll.refreshComplete');
-
                 }, 1000);
 
             };
@@ -42,7 +38,6 @@ define(['angular', 'async!http://maps.google.com/maps/api/js?key=AIzaSyB16sGmIek
         // get map
         .controller('WoSMapCtrl', function ($scope, $ionicNavBarDelegate, $ionicLoading) {
             function initialize() {
-                console.log('here')
 
                 var mapOptions = {
                     center: new google.maps.LatLng(0, 0),

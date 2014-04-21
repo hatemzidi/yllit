@@ -56,7 +56,7 @@
 }
 
 a.item-content {
-    padding: 15px 0 !important;
+    padding: 0 !important;
 }
 
 .wos-note {
@@ -75,4 +75,9 @@ a.item-content {
 
 .scroll {
     height: 100%;
+}
+
+/* hide extra space in pull to refresh */
+.text-refreshing, .text-pulling {
+    display : none !important;
 }
