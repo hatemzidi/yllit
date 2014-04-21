@@ -4,6 +4,54 @@
     cursor: url('../img/finger.png'), auto;
 }*/
 
+html {
+    min-height: 100%; /* make sure it is at least as tall as the viewport */
+    position: relative;
+}
+
+body {
+    height: 100% /* force the BODY element to match the height of the HTML element */
+}
+
+#landing {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    z-index: -1;
+    display: table-cell;
+    vertical-align: middle;
+    background-color: #4A87EE;
+}
+
+#landing div.nag {
+    width: 300px;
+    height: 200px;
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+}
+
+#landing div.nag img {
+    display: block;
+    margin: auto;
+    padding-top: 20px;
+}
+
+#appname {
+    color: #FFF;
+    font-size: 50px;
+
+}
+
+
 .ionic-logo {
     display: block;
     margin: 15px auto;
@@ -93,6 +141,10 @@
     border: 0 !important;
 }
 
+.post.card .item-avatar {
+    padding-left: 62px;
+}
+
 .post.card .item-avatar p {
     margin: 0px !important;
     font-size: 13px !important;
@@ -115,33 +167,34 @@
     float: right;
 }
 
-
 /* http://www.dwuser.com/education/content/creating-responsive-tiled-layout-with-pure-css/ */
 .wrap {
     overflow: hidden;
     margin: 1px;
 }
+
 .box {
     float: left;
     position: relative;
     width: 25%;
     padding-bottom: 25%;
 }
+
 .boxInner {
     position: absolute;
-/*    left: 10px;
-    right: 10px;
-    top: 10px;
-    bottom: 10px;*/
+    /*    left: 10px;
+        right: 10px;
+        top: 10px;
+        bottom: 10px;*/
     overflow: hidden;
 }
+
 .boxInner img {
     width: 100%;
 }
 
-
 .profile.card {
-    margin : 5px 0 10px 0 !important;
+    margin: 5px 0 10px 0 !important;
 }
 
 .profile.card .item-avatar {
