@@ -56,7 +56,6 @@
 }
 */
 
-
 .wos-note {
     margin-left: 10px;
     font-size: 13px;
@@ -91,7 +90,7 @@
 
 .post.card .item-body {
     padding: 0px !important;
-    border : 0 !important;
+    border: 0 !important;
 }
 
 .post.card .item-avatar p {
@@ -103,7 +102,7 @@
     float: left;
 }
 
-.post.card p.location , .post.card  p.location a {
+.post.card p.location, .post.card p.location a {
     color: #006699;
 }
 
@@ -114,4 +113,28 @@
 
 .post.card .time {
     float: right;
+}
+
+
+/* http://www.dwuser.com/education/content/creating-responsive-tiled-layout-with-pure-css/ */
+.wrap {
+    overflow: hidden;
+    margin: 1px;
+}
+.box {
+    float: left;
+    position: relative;
+    width: 25%;
+    padding-bottom: 25%;
+}
+.boxInner {
+    position: absolute;
+/*    left: 10px;
+    right: 10px;
+    top: 10px;
+    bottom: 10px;*/
+    overflow: hidden;
+}
+.boxInner img {
+    width: 100%;
 }

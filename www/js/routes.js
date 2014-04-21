@@ -3,10 +3,6 @@ define(['angular', 'app'], function (angular, app) {
 
     return app.config(function ($stateProvider, $urlRouterProvider) {
 
-        // Ionic uses AngularUI Router which uses the concept of states
-        // Learn more here: https://github.com/angular-ui/ui-router
-        // Set up the various states which the app can be in.
-        // Each state's controller can be found in controllers.js
         $stateProvider
 
             // setup an abstract state for the tabs directive
@@ -16,12 +12,21 @@ define(['angular', 'app'], function (angular, app) {
                 templateUrl: "templates/tabs.html"
             })
 
-            // the pet tab has its own child nav-view and history
             .state('tab.posts-index', {
                 url: '/posts',
                 views: {
                     'posts-tab': {
                         templateUrl: 'templates/posts-index.html',
+                        controller: 'WoSPostsIndexCtrl'
+                    }
+                }
+            })
+
+            .state('tab.posts-thumbs', {
+                url: '/posts',
+                views: {
+                    'posts-tab': {
+                        templateUrl: 'templates/posts-thumbs.html',
                         controller: 'WoSPostsIndexCtrl'
                     }
                 }
@@ -48,7 +53,7 @@ define(['angular', 'app'], function (angular, app) {
             })
 
             .state('tab.profile', {
-                url: '/profile/:profileId',
+                url: '/profile',
                 views: {
                     'profile-tab': {
                         templateUrl: 'templates/profile.html'

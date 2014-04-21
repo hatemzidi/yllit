@@ -16,6 +16,7 @@ define(['angular',
 
         // get all data
         .controller('WoSPostsIndexCtrl', function ($scope, $state, $timeout, $ionicActionSheet, dataService) {
+
             $scope.posts = dataService.all();
 
             $scope.getMap = function () {
@@ -26,20 +27,17 @@ define(['angular',
                 $scope.searchQuery = '';
             };
 
-            $scope.switch = function () {
+            $scope.switch = function (mode) {
+                if (mode === 'grid') {
+                    // timeline mode
+                    $state.go('tab.posts-index');
+                }
 
-                // Show the action sheet
-                $ionicActionSheet.show({
-                    buttons: [
-                        { text: 'Timeline' },
-                        { text: 'Thumbnails' }
-                    ],
-                    cancelText: 'Cancel',
-                    buttonClicked: function (index) {
-                        return true;
-                    }
-                });
-
+                if (mode === 'thumbs') {
+                    // thumbnails mode
+                    $state.go('tab.posts-thumbs');
+                }
+                return true;
             };
 
 
