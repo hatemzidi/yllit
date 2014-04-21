@@ -1,4 +1,6 @@
-define(['angular', 'async!http://maps.google.com/maps/api/js?key=AIzaSyB16sGmIekuGIvYOfNoW9T44377IU2d2Es&sensor=false!callback'], function (angular) {
+define(['angular',
+    'async!http://maps.google.com/maps/api/js?sensor=false!callback'
+], function (angular) {
     return angular.module('WoS.controllers', [])
 
 
@@ -13,15 +15,36 @@ define(['angular', 'async!http://maps.google.com/maps/api/js?key=AIzaSyB16sGmIek
         })
 
         // get all data
-        .controller('WoSPostsIndexCtrl', function ($scope, $state, $timeout, dataService) {
+        .controller('WoSPostsIndexCtrl', function ($scope, $state, $timeout, $ionicActionSheet, dataService) {
             $scope.posts = dataService.all();
 
             $scope.getMap = function () {
                 $state.go('tab.map');
             };
 
-            $scope.doRefresh = function() {
-                $timeout( function() {
+            $scope.clearFilter = function(){
+                $scope.searchQuery = '';
+            };
+
+            $scope.switch = function () {
+
+                // Show the action sheet
+                $ionicActionSheet.show({
+                    buttons: [
+                        { text: 'Timeline' },
+                        { text: 'Thumbnails' }
+                    ],
+                    cancelText: 'Cancel',
+                    buttonClicked: function (index) {
+                        return true;
+                    }
+                });
+
+            };
+
+
+            $scope.doRefresh = function () {
+                $timeout(function () {
                     $scope.posts = dataService.all();
                     //Stop the ion-refresher from spinning
                     $scope.$broadcast('scroll.refreshComplete');
@@ -105,7 +128,6 @@ define(['angular', 'async!http://maps.google.com/maps/api/js?key=AIzaSyB16sGmIek
                     $scope.data = response;
                     console.log("got upload url ", $scope.data.uploadurl);
                 });
-
 
 
                 // take picture

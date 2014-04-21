@@ -1,10 +1,10 @@
-<ion-view title="Posts"  hide-back-button="true">
+<ion-view title="Posts" hide-back-button="true">
 
     <ion-nav-buttons side="right">
         <button ng-click="getMap()" class="button button-icon icon ion-ios7-location"></button>
     </ion-nav-buttons>
 
-    <ion-content has-header="true" has-tabs="true" start-y="46">
+    <ion-content has-header="true" has-tabs="true" padding="false" start-y="46">
 
         <ion-refresher on-refresh="doRefresh()" refreshing-icon="ion-looping">
         </ion-refresher>
@@ -13,10 +13,12 @@
         <div class="bar bar-header item-input-inset search-bar">
             <label class="item-input-wrapper">
                 <i class="icon ion-ios7-search placeholder-icon"></i>
-                <input type="search" ng-model="cr.searchString" placeholder="search">
+                <input type="search" autocorrect="off" ng-model="searchQuery" placeholder="search">
+                <i class="placeholder-icon clear-search icon ion-ios7-close" ng-if="searchQuery" ng-click="clearFilter()"></i>
             </label>
-            <button class="button button-clear" ng-if="cr.searchString" ng-click="clearFilter()">
-                <i class="icon ion-ios7-close"></i>
+
+            <button class="button button-clear" ng-click="switch()">
+                <i class="icon ion-grid"></i>
             </button>
         </div>
 

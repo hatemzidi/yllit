@@ -81,3 +81,7 @@ a.item-content {
 .text-refreshing, .text-pulling {
     display : none !important;
 }
+
+.clear-search {
+    font-size: 25px;
+}
