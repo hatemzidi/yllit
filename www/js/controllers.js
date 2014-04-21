@@ -22,7 +22,7 @@ define(['angular',
                 $state.go('tab.map');
             };
 
-            $scope.clearFilter = function(){
+            $scope.clearFilter = function () {
                 $scope.searchQuery = '';
             };
 
@@ -59,18 +59,26 @@ define(['angular',
         })
 
         // get map
-        .controller('WoSMapCtrl', function ($scope, $ionicNavBarDelegate, $ionicLoading) {
+        .controller('WoSMapCtrl', function ($scope, $ionicNavBarDelegate, $ionicLoading, WoSMapUserLocation) {
             function initialize() {
 
                 var mapOptions = {
-                    center: new google.maps.LatLng(0, 0),
-                    zoom: 16,
-                    mapTypeId: google.maps.MapTypeId.ROADMAP
-                };
+                        center: new google.maps.LatLng(37.09024, -95.7128910),
+                        zoom: 4,
+                        mapTypeId: google.maps.MapTypeId.ROADMAP,
+                        disableDefaultUI: true,
+                        mapTypeControl: true,
+                        mapTypeControlOptions: {
+                            style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+                            position: google.maps.ControlPosition.TOP_CENTER,
+                            mapTypeIds: [google.maps.MapTypeId.ROADMAP, google.maps.MapTypeId.SATELLITE]
+                        }
+                    };
                 var map = new google.maps.Map(document.getElementById("map"),
                     mapOptions);
 
                 $scope.map = map;
+                $scope.markers = [];
             }
 
             if (!$scope.map) {
@@ -91,12 +99,31 @@ define(['angular',
                     showBackdrop: false
                 });
 
-                navigator.geolocation.getCurrentPosition(function (pos) {
-                    $scope.map.setCenter(new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude));
-                    $scope.loading.hide();
-                }, function (error) {
-                    alert('Unable to get location: ' + error.message);
+                WoSMapUserLocation.get(function(location){
+
+                    if (location) {
+
+                        $scope.map.setCenter(location);
+                        $scope.map.setZoom(11);
+                       // $scope.setUserLocation(location);
+                        $scope.loading.hide();
+
+//                        $scope.setSearchFormLocation(location, function(){
+//                            $scope.partyMap.setZoom(11);
+//                            $scope.searchForEvents();
+//                        });
+                    } else {
+                        alert('Unable to get location: ' + error.message);
+                    }
                 });
+
+//                navigator.geolocation.getCurrentPosition(function (pos) {
+//                    $scope.partyMap.setZoom(11);
+//                    $scope.map.setCenter(new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude));
+//                    $scope.loading.hide();
+//                }, function (error) {
+//                    alert('Unable to get location: ' + error.message);
+//                });
             };
         })
 
