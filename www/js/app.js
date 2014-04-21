@@ -2,14 +2,16 @@ define([
     'angular',
     'angularIonic',
     'controllers',
-    'services'
+    'services',
+    'timeAgo'
 ], function (angular) {
   // Ionic WoS App
 
-  return angular.module('starter', [
+  return angular.module('WoS', [
       'ionic',
       'WoS.services',
-      'WoS.controllers'
+      'WoS.controllers',
+      'yaru22.angular-timeago'
   ]);
 
 });

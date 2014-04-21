@@ -25,6 +25,7 @@
     "requirejs-plugins": "~1.0.2",
     "requirejs": "~2.1.11",
     "angular-touch": "~1.2.16",
-    "fontawesome": "~4.0.3"
+    "fontawesome": "~4.0.3",
+    "angular-timeago": "~0.1.2"
   }
 }
