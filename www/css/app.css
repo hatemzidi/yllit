@@ -1,5 +1,18 @@
 @import url('../lib/fontawesome/css/font-awesome.css');
 
+@font-face {
+    font-family: 'Dosis';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Dosis Regular'), local('Dosis-Regular'), url(dosis-400.woff) format('woff');
+}
+@font-face {
+    font-family: 'Dosis';
+    font-style: normal;
+    font-weight: 500;
+    src: local('Dosis Medium'), local('Dosis-Medium'), url(dosis-500.woff) format('woff');
+}
+
 /*body {
     cursor: url('../img/finger.png'), auto;
 }*/
@@ -23,11 +36,30 @@ body {
     z-index: -1;
     display: table-cell;
     vertical-align: middle;
-    background-color: #4A87EE;
+/*    background: rgb(207,231,250); *//* Old browsers *//*
+    background: -moz-linear-gradient(top,  rgba(207,231,250,1) 0%, rgba(74,135,238,1) 100%); *//* FF3.6+ *//*
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(207,231,250,1)), color-stop(100%,rgba(74,135,238,1))); *//* Chrome,Safari4+ *//*
+    background: -webkit-linear-gradient(top,  rgba(207,231,250,1) 0%,rgba(74,135,238,1) 100%); *//* Chrome10+,Safari5.1+ *//*
+    background: -o-linear-gradient(top,  rgba(207,231,250,1) 0%,rgba(74,135,238,1) 100%); *//* Opera 11.10+ *//*
+    background: -ms-linear-gradient(top,  rgba(207,231,250,1) 0%,rgba(74,135,238,1) 100%); *//* IE10+ *//*
+    background: linear-gradient(to bottom,  rgba(207,231,250,1) 0%,rgba(74,135,238,1) 100%); *//* W3C *//*
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cfe7fa', endColorstr='#4a87ee',GradientType=0 ); *//* IE6-9 */
+
+    background: #cfe7fa; /* Old browsers */
+    background: -moz-linear-gradient(top,  #cfe7fa 0%, #6393c1 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#cfe7fa), color-stop(100%,#6393c1)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #cfe7fa 0%,#6393c1 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #cfe7fa 0%,#6393c1 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #cfe7fa 0%,#6393c1 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #cfe7fa 0%,#6393c1 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cfe7fa', endColorstr='#6393c1',GradientType=0 ); /* IE6-9 */
+
+
+
 }
 
 #landing div.nag {
-    width: 300px;
+    width: 200px;
     height: 200px;
 
     position: absolute;
@@ -42,14 +74,22 @@ body {
 #landing div.nag img {
     display: block;
     margin: auto;
-    padding-top: 20px;
+    padding: 5px 0;
+}
+
+#landing div.nag img.logo {
+    width: 150px;
 }
 
 #appname {
+    font-family: 'Dosis';
     color: #FFF;
     font-size: 50px;
-
+    padding: 20px 0;
 }
+
+
+
 
 
 .ionic-logo {

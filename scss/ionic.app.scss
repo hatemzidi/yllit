@@ -18,6 +18,241 @@ $dark:                            #444 !default;
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../lib/ionic/fonts" !default;
 
-// Include all of Ionic
-@import "www/lib/ionic/scss/ionic";
+$positive: #6393c1 !default;
 
+// Include all of Ionic
+@import "../www/lib/ionic/scss/ionic";
+
+@import url('../lib/fontawesome/css/font-awesome.css');
+
+@font-face {
+  font-family: 'Dosis';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Dosis Regular'), local('Dosis-Regular'), url(../www/css/dosis-400.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Dosis';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Dosis Medium'), local('Dosis-Medium'), url(../www/css/dosis-500.woff) format('woff');
+}
+
+/*body {
+    cursor: url('../img/finger.png'), auto;
+}*/
+
+html {
+  min-height: 100%; /* make sure it is at least as tall as the viewport */
+  position: relative;
+}
+
+body {
+  height: 100% /* force the BODY element to match the height of the HTML element */
+}
+
+#landing {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  z-index: -1;
+  display: table-cell;
+  vertical-align: middle;
+  /*    background: rgb(207,231,250); *//* Old browsers *//*
+      background: -moz-linear-gradient(top,  rgba(207,231,250,1) 0%, rgba(74,135,238,1) 100%); *//* FF3.6+ *//*
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(207,231,250,1)), color-stop(100%,rgba(74,135,238,1))); *//* Chrome,Safari4+ *//*
+      background: -webkit-linear-gradient(top,  rgba(207,231,250,1) 0%,rgba(74,135,238,1) 100%); *//* Chrome10+,Safari5.1+ *//*
+      background: -o-linear-gradient(top,  rgba(207,231,250,1) 0%,rgba(74,135,238,1) 100%); *//* Opera 11.10+ *//*
+      background: -ms-linear-gradient(top,  rgba(207,231,250,1) 0%,rgba(74,135,238,1) 100%); *//* IE10+ *//*
+      background: linear-gradient(to bottom,  rgba(207,231,250,1) 0%,rgba(74,135,238,1) 100%); *//* W3C *//*
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cfe7fa', endColorstr='#4a87ee',GradientType=0 ); *//* IE6-9 */
+
+  background: #cfe7fa; /* Old browsers */
+  background: -moz-linear-gradient(top, #cfe7fa 0%, #6393c1 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #cfe7fa), color-stop(100%, #6393c1)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #cfe7fa 0%, #6393c1 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #cfe7fa 0%, #6393c1 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #cfe7fa 0%, #6393c1 100%); /* IE10+ */
+  background: linear-gradient(to bottom, #cfe7fa 0%, #6393c1 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cfe7fa', endColorstr='#6393c1', GradientType=0); /* IE6-9 */
+
+}
+
+#landing div.nag {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+}
+
+#landing div.nag img {
+  display: block;
+  margin: auto;
+  padding: 5px 0;
+}
+
+#landing div.nag img.logo {
+  width: 150px;
+}
+
+#appname {
+  font-family: 'Dosis';
+  color: #FFF;
+  font-size: 50px;
+  padding: 20px 0;
+}
+
+.ionic-logo {
+  display: block;
+  margin: 15px auto;
+  width: 96px;
+  height: 96px;
+}
+
+.item-body > p {
+  margin-top: 0;
+  margin-bottom: 4px;
+}
+
+.col-15 {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 15%;
+  -moz-box-flex: 0;
+  -moz-flex: 0 0 15%;
+  -ms-flex: 0 0 15%;
+  flex: 0 0 15%;
+  max-width: 15%;
+}
+
+.col-70 {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 70%;
+  -moz-box-flex: 0;
+  -moz-flex: 0 0 70%;
+  -ms-flex: 0 0 70%;
+  flex: 0 0 70%;
+  max-width: 70%;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+.scroll {
+  height: 100%;
+}
+
+/* hide extra space in pull to refresh */
+.text-refreshing, .text-pulling {
+  display: none !important;
+}
+
+.clear-search {
+  font-size: 25px;
+}
+
+.post.card {
+  margin: 0px !important;
+  padding: 0 !important;
+}
+
+.post.card .item-body {
+  padding: 0px !important;
+  border: 0 !important;
+}
+
+.post.card .item-avatar {
+  padding-left: 62px;
+}
+
+.post.card .item-avatar p {
+  margin: 0px !important;
+  font-size: 13px !important;
+}
+
+.post.card .info {
+  float: left;
+}
+
+.post.card p.location, .post.card p.location a {
+  color: #006699;
+}
+
+.post.card .info p.location a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.post.card .time {
+  float: right;
+}
+
+/* http://www.dwuser.com/education/content/creating-responsive-tiled-layout-with-pure-css/ */
+.wrap {
+  overflow: hidden;
+  margin: 1px;
+}
+
+.box {
+  float: left;
+  position: relative;
+  width: 25%;
+  padding-bottom: 25%;
+}
+
+.boxInner {
+  position: absolute;
+  /*    left: 10px;
+      right: 10px;
+      top: 10px;
+      bottom: 10px;*/
+  overflow: hidden;
+}
+
+.boxInner img {
+  width: 100%;
+}
+
+.profile.card {
+  margin: 5px 0 10px 0 !important;
+}
+
+.profile.card .item-avatar {
+  padding: 0 0 0 10px;
+}
+
+.profile.card .item-avatar p {
+  font-size: 13px !important;
+}
+
+.profile.card .item-avatar img {
+  max-width: 70px !important;
+  max-height: 70px !important;
+  border-radius: 4px;
+}
+
+.profile.card div.col {
+  text-align: center;
+}
+
+.profile.card div.col i {
+  font-size: 30px !important;
+}
+
+.profile.card div.col p {
+  font-size: 15px !important;
+}
+
+.profile.card .row.bottom p {
+  padding-left: 5px;
+}
