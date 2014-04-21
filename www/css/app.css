@@ -138,3 +138,38 @@
 .boxInner img {
     width: 100%;
 }
+
+
+.profile.card {
+    margin : 5px 0 10px 0 !important;
+}
+
+.profile.card .item-avatar {
+    padding: 0 0 0 10px;
+}
+
+.profile.card .item-avatar p {
+    font-size: 13px !important;
+}
+
+.profile.card .item-avatar img {
+    max-width: 70px !important;
+    max-height: 70px !important;
+    border-radius: 4px;
+}
+
+.profile.card div.col {
+    text-align: center;
+}
+
+.profile.card div.col i {
+    font-size: 30px !important;
+}
+
+.profile.card div.col p {
+    font-size: 15px !important;
+}
+
+.profile.card .row.bottom p {
+    padding-left: 5px;
+}

@@ -11,16 +11,32 @@ define(['angular'], function (angular) {
             }
         })
 
-        // A simple example service that returns some data.
+
+        .factory('profileService', function () {
+            var data = [
+                { id: 1, nickname: 'Grumpy 1', avatar: 'img/tom.png', posts:100, disliked : 15, bio:'Mutherfukka!'},
+                { id: 2, nickname: 'Foulen', avatar: 'img/house0.png', posts:6, disliked : 1509, bio:'a bio'},
+                { id: 3, nickname: 'MutherFkr', avatar: 'img/house1.jpg', posts:126, disliked : 0, bio:'what up!'},
+                { id: 4, nickname: 'Meh', avatar: 'img/house2.png', posts:345, disliked : 123, bio:'awesome guy'},
+                { id: 5, nickname: 'House M.D.', avatar: 'img/house2.png', posts:3, disliked : 1, bio:''},
+            ];
+
+            return {
+                get: function (id) {
+                    // Simple index lookup
+                    return data[id];
+                }
+            }
+        })
 
         .factory('dataService', function () {
             // Might use a resource here that returns a JSON array
 
             // Some fake testing data
             var data = [
-                { id: 6, grumpy: {nickname: 'Grumpy 1', avatar: 'img/tom.png'}, image: 'img/cookie.jpg', location: {name :"kitchen"}, "timestamp": (new Date()).toISOString(), counter: '120', idisliked: 'yes', description: 'Furry little creatures. Obsessed with plotting assassination, but never following through on it.' },
-                { id: 7, grumpy: {nickname: 'Foulen', avatar: 'img/house0.png'}, image: 'img/ps4.jpg', location: {name :"home"}, "timestamp": "2014-01-01T10:01:19 -01:00", counter: '0', idisliked: 'no', description: 'Lovable. Loyal almost to a fault. Smarter than they let on.' },
-                { id: 8, grumpy: {nickname: 'MutherFkr', avatar: 'img/house1.jpg'}, image: 'img/car.jpg', location: {name :"autostara, italy"}, "timestamp": "2014-04-16T10:01:19 -01:00", counter: '504', idisliked: 'no', description: 'Everyone likes turtles.' },
+                { id: 6, grumpy: {nickname: 'Grumpy 1', avatar: 'img/tom.png'}, image: 'img/cookie.jpg', location: {name: "kitchen"}, "timestamp": (new Date()).toISOString(), counter: '120', idisliked: 'yes', description: 'Furry little creatures. Obsessed with plotting assassination, but never following through on it.' },
+                { id: 7, grumpy: {nickname: 'Foulen', avatar: 'img/house0.png'}, image: 'img/ps4.jpg', location: {name: "home"}, "timestamp": "2014-01-01T10:01:19 -01:00", counter: '0', idisliked: 'no', description: 'Lovable. Loyal almost to a fault. Smarter than they let on.' },
+                { id: 8, grumpy: {nickname: 'MutherFkr', avatar: 'img/house1.jpg'}, image: 'img/car.jpg', location: {name: "autostara, italy"}, "timestamp": "2014-04-16T10:01:19 -01:00", counter: '504', idisliked: 'no', description: 'Everyone likes turtles.' },
                 { id: 9, grumpy: {nickname: 'Meh', avatar: 'img/house2.png'}, image: 'img/microsoft.jpg', location: {}, "timestamp": "2014-03-21T10:01:19 -01:00", counter: '666', idisliked: 'yes', description: 'An advanced pet. Needs millions of gallons of salt water. Will happily eat you.' },
                 { id: 10, grumpy: {nickname: 'House M.D.', avatar: 'img/house2.png'}, image: 'img/cookie.jpg', location: {}, "timestamp": "2012-04-21T10:01:19 -01:00", counter: '123213', idisliked: 'yes', description: 'An advanced pet. Needs millions of gallons of salt water. Will happily eat you.' },
 
@@ -187,8 +203,8 @@ define(['angular'], function (angular) {
                     // Simple index lookup
                     return data[id];
                 },
-                getCoords : function(id){
-                    return {latitude : data[id].location.latitude, longitude: data[id].location.longitude}
+                getCoords: function (id) {
+                    return {latitude: data[id].location.latitude, longitude: data[id].location.longitude}
                 }
             }
         })

@@ -56,7 +56,8 @@ define(['angular', 'app'], function (angular, app) {
                 url: '/profile',
                 views: {
                     'profile-tab': {
-                        templateUrl: 'templates/profile.html'
+                        templateUrl: 'templates/profile.html',
+                        controller: 'WoSProfileCtrl'
                     }
                 }
             })

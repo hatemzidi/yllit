@@ -61,6 +61,13 @@ define(['angular',
 
         })
 
+        // profile page
+        .controller('WoSProfileCtrl', function ($scope, $stateParams, $ionicNavBarDelegate, profileService, dataService) {
+            $scope.profile = profileService.get(0);
+            $scope.posts = dataService.all();
+
+        })
+
         // get map
         .controller('WoSMapCtrl', function ($scope, $stateParams, $ionicNavBarDelegate, $ionicLoading, dataService, WoSMapUserLocation) {
             function initialize() {
