@@ -13,6 +13,13 @@
     src: local('Dosis Medium'), local('Dosis-Medium'), url(dosis-500.woff) format('woff');
 }
 
+@font-face {
+    font-family: 'Satisfy';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Satisfy'), url(Satisfy-400.woff) format('woff');
+}
+
 /*body {
     cursor: url('../img/finger.png'), auto;
 }*/
@@ -82,7 +89,7 @@ body {
 }
 
 #appname {
-    font-family: 'Dosis';
+    font-family: 'Satisfy';
     color: #FFF;
     font-size: 50px;
     padding: 20px 0;
