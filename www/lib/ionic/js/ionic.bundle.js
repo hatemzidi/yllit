@@ -9,7 +9,7 @@
  * Copyright 2014 Drifty Co.
  * http://drifty.com/
  *
- * Ionic, v1.0.0-beta.1-nightly-1746
+ * Ionic, v1.0.0-beta.1-nightly-1793
  * A powerful HTML5 mobile app framework.
  * http://ionicframework.com/
  *
@@ -26,7 +26,7 @@
 window.ionic = {
   controllers: {},
   views: {},
-  version: '1.0.0-beta.1-nightly-1746'
+  version: '1.0.0-beta.1-nightly-1793'
 };
 
 (function(ionic) {
@@ -31959,7 +31959,7 @@ angular.module('ui.router.compat')
  * Copyright 2014 Drifty Co.
  * http://drifty.com/
  *
- * Ionic, v1.0.0-beta.1-nightly-1746
+ * Ionic, v1.0.0-beta.1-nightly-1793
  * A powerful HTML5 mobile app framework.
  * http://ionicframework.com/
  *
@@ -33497,7 +33497,7 @@ function($animate, $ionicTemplateLoader, $ionicBackdrop, $log, $q, $timeout, $ro
           self.element.removeClass('popup-hidden');
           self.element.addClass('popup-showing active');
           ionic.DomUtil.centerElementByMarginTwice(self.element[0]);
-          focusLastButton(self.element);
+          focusInputOrButton(self.element);
         });
       };
       self.hide = function(callback) {
@@ -33580,11 +33580,14 @@ function($animate, $ionicTemplateLoader, $ionicBackdrop, $log, $q, $timeout, $ro
     return resultPromise;
   }
 
-  function focusLastButton(element) {
-    var buttons = element[0].querySelectorAll('button');
-    var lastButton = buttons[buttons.length-1];
-    if(lastButton) {
-      lastButton.focus();
+  function focusInputOrButton(element) {
+    var inputs = element[0].querySelectorAll('input');
+    if (!inputs.length) {
+      inputs = element[0].querySelectorAll('button');
+    }
+    var last = inputs[inputs.length-1];
+    if(last) {
+      last.focus();
     }
   }
 
@@ -35509,6 +35512,7 @@ function($timeout, $controller, $ionicBind) {
     restrict: 'E',
     require: '^?ionNavView',
     scope: true,
+    priority: 800,
     compile: function(element, attr) {
       var innerElement;
 
@@ -35933,7 +35937,7 @@ function($animate, $compile) {
       var isAnchor = angular.isDefined($attrs.href) || angular.isDefined($attrs.ngHref);
       var isComplexItem = isAnchor ||
         //Lame way of testing, but we have to know at compile what to do with the element
-        /ion-(delete|option|reorder)-button/.test($element.html());
+        /ion-(delete|option|reorder)-button/i.test($element.html());
 
         if (isComplexItem) {
           var innerElement = angular.element(isAnchor ? ITEM_TPL_CONTENT_ANCHOR : ITEM_TPL_CONTENT);
@@ -35987,10 +35991,10 @@ var ITEM_TPL_DELETE_BUTTON =
 * ```
 */
 IonicModule
-.directive('ionDeleteButton', [function() {
+.directive('ionDeleteButton', ['$animate', function($animate) {
   return {
     restrict: 'E',
-    require: '^ionItem',
+    require: ['^ionItem', '^ionList'],
     //Run before anything else, so we can move it before other directives process
     //its location (eg ngIf relies on the location of the directive in the dom)
     priority: Number.MAX_VALUE,
@@ -35998,10 +36002,16 @@ IonicModule
       //Add the classes we need during the compile phase, so that they stay
       //even if something else like ngIf removes the element and re-addss it
       $attr.$set('class', ($attr.class || '') + ' button icon button-icon', true);
-      return function($scope, $element, $attr, itemCtrl) {
+      return function($scope, $element, $attr, ctrls) {
+        var itemCtrl = ctrls[0];
+        var listCtrl = ctrls[1];
         var container = angular.element(ITEM_TPL_DELETE_BUTTON);
         container.append($element);
         itemCtrl.$element.append(container).addClass('item-left-editable');
+
+        if (listCtrl.showDelete()) {
+          $animate.removeClass(container, 'ng-hide');
+        }
       };
     }
   };
@@ -36103,15 +36113,17 @@ var ITEM_TPL_REORDER_BUTTON =
 * Parameters given: $fromIndex, $toIndex.
 */
 IonicModule
-.directive('ionReorderButton', [function() {
+.directive('ionReorderButton', ['$animate', function($animate) {
   return {
     restrict: 'E',
-    require: '^ionItem',
+    require: ['^ionItem', '^ionList'],
     priority: Number.MAX_VALUE,
     compile: function($element, $attr) {
       $attr.$set('class', ($attr.class || '') + ' button icon button-icon', true);
       $element[0].setAttribute('data-prevent-scroll', true);
-      return function($scope, $element, $attr, itemCtrl) {
+      return function($scope, $element, $attr, ctrls) {
+        var itemCtrl = ctrls[0];
+        var listCtrl = ctrls[1];
         $scope.$onReorder = function(oldIndex, newIndex) {
           $scope.$eval($attr.onReorder, {
             $fromIndex: oldIndex,
@@ -36122,6 +36134,10 @@ IonicModule
         var container = angular.element(ITEM_TPL_REORDER_BUTTON);
         container.append($element);
         itemCtrl.$element.append(container).addClass('item-right-editable');
+
+        if (listCtrl.showReorder()) {
+          $animate.removeClass(container, 'ng-hide');
+        }
       };
     }
   };
@@ -37091,9 +37107,9 @@ IonicModule
     '<div class="scroll-refresher">' +
       '<div class="ionic-refresher-content">' +
         '<i class="icon {{pullingIcon}} icon-pulling"></i>' +
-        '<div class="text-pulling" ng-bind-html="pullingText || \'&nbsp;\'"></div>' +
+        '<div class="text-pulling" ng-bind-html="pullingText"></div>' +
         '<i class="icon {{refreshingIcon}} icon-refreshing"></i>' +
-        '<div class="text-refreshing" ng-bind-html="refreshingText || \'&nbsp;\'"></div>' +
+        '<div class="text-refreshing" ng-bind-html="refreshingText"></div>' +
       '</div>' +
     '</div>',
     compile: function($element, $attrs) {

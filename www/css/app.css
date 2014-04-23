@@ -24,6 +24,10 @@
     cursor: url('../img/finger.png'), auto;
 }*/
 
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+    display: none !important;
+}
+
 html {
     min-height: 100%; /* make sure it is at least as tall as the viewport */
     position: relative;
@@ -272,4 +276,32 @@ body {
 
 .profile.card .row.bottom p {
     padding-left: 5px;
+}
+
+
+.tabs .tab-item .icon.capture {
+    background-repeat: no-repeat;
+    background-position: 50%;
+    height: 100%;
+    background-image: url('../img/capture-button.png');
+    background-size:contain;
+}
+
+
+#camera_img {
+    overflow: hidden;
+    position: relative;
+}
+
+#camera_overlay {
+    width: 640px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background: url('../img/overlay_big.png');
+    z-index: 50;
+    background-size: 100%;
+    height : 640px;
+    opacity: 0.2;
+
 }
