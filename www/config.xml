@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="prg.coenraets.sociogram" version="0.0.1" xmlns="http://www.w3.org/ns/widgets"
         xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>yellit</name>
+    <name>yllit</name>
     <description>
        Wall of Shame Application
     </description>

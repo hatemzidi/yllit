@@ -41,6 +41,5 @@
   },
   "_source": "git://github.com/driftyco/ionic-bower.git",
   "_target": "master",
-  "_originalSource": "driftyco/ionic-bower",
-  "_direct": true
+  "_originalSource": "driftyco/ionic-bower"
 }

@@ -168,8 +168,8 @@ define(['angular',
         })
 
         // inspired from : https://github.com/yafraorg/ionictests
-        .controller('WoSCamCtrl', ['$scope', '$location', 'GetUU',
-            function ($scope, $location, GetUU) {
+        .controller('WoSCamCtrl', ['$scope', '$location', '$state', 'GetUU',
+            function ($scope, $location, $state, GetUU) {
 
                 // init variables
                 $scope.data = {};
@@ -253,6 +253,22 @@ define(['angular',
                         console.log("upload error target " + error.target);
                     }
                 };
-            }]);
+
+                $scope.goShare = function () {
+                    $state.go('tab.upload');
+                };
+            }])
+
+        // upload page
+        .controller('WoSUploadCtrl', function ($scope) {
+            var tabs = document.querySelectorAll('div.tabs')[0];
+            tabs = angular.element(tabs);
+            tabs.css('display', 'none');
+
+            $scope.$on('$destroy', function() {
+                tabs.css('display', '');
+            });
+
+        });
 })
 ;

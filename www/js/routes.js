@@ -70,6 +70,16 @@ define(['angular', 'app'], function (angular, app) {
                         controller: 'WoSCamCtrl'
                     }
                 }
+            })
+
+            .state('tab.upload', {
+                url: '/upload',
+                views: {
+                    'camera-tab': {
+                        templateUrl: 'templates/upload.html',
+                        controller: 'WoSUploadCtrl'
+                    }
+                }
             });
 
         // if none of the above states are matched, use this as the fallback
