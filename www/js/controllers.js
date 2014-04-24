@@ -178,6 +178,16 @@ define(['angular',
                 var destinationType; // sets the format of returned value
                 var url;
 
+                // first clean tab
+                var tabs = document.querySelectorAll('div.tabs')[0];
+                tabs = angular.element(tabs);
+                tabs.css('display', 'none');
+
+                $scope.$on('$destroy', function() {
+                    tabs.css('display', '');
+                });
+
+
                 // on DeviceReady check if already logged in (in our case CODE saved)
                 ionic.Platform.ready(function () {
                     console.log("ready get camera types");
@@ -257,6 +267,11 @@ define(['angular',
                 $scope.goShare = function () {
                     $state.go('tab.upload');
                 };
+
+
+                $scope.cameraCancel = function() {
+                    $state.go('tab.posts-index');
+                }
             }])
 
         // upload page

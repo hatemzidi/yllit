@@ -16,7 +16,10 @@
                 <div class="info">
                     <p>{{post.grumpy.nickname}}</p>
 
-                    <p <p class="location" ng-show="post.location.name"><i class="fa fa-map-marker"></i>&nbsp;<a ui-sref="tab.map({{post.id}})">{{post.location.name}}</a></p>
+                    <p
+
+                    <p class="location" ng-show="post.location.name"><i class="fa fa-map-marker"></i>&nbsp;<a
+                            ui-sref="tab.map({{post.id}})">{{post.location.name}}</a></p>
                 </div>
                 <div class="time">
                     <p><i class="fa fa-clock-o"></i>&nbsp;{{post.timestamp | timeAgo}}</p>
@@ -29,15 +32,28 @@
                 <p>
                     {{post.description}}
                 </p>
+
+                <p>{{post.counter}} X | {{post.counter}} Y</p>
             </div>
 
-            <div class="item tabs tabs-secondary tabs-icon-right">
-                <a class="tab-item wos-note" href="#">
-                    {{post.counter}} <img src="img/btn_active_{{post.idisliked}}.png"/>
-                </a>
-                <a class="tab-item" href="#">
-                    {{post.counter}} <i class="ion-chatboxes"></i>
-                </a>
+            <div class="item tabs-secondary tabs-icon-right post-bottom">
+                <div class="row no-padding post-buttons">
+                    <div class="col">
+                        <a class="tab-item" href="#">
+                            <i class="ion-speakerphone"></i>
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a class="tab-item" href="#">
+                            <i class="ion-chatboxes"></i>
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a class="tab-item" href="#">
+                            <i class="ion-share"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
 

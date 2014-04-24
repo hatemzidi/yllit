@@ -6,6 +6,7 @@
     font-weight: 400;
     src: local('Dosis Regular'), local('Dosis-Regular'), url(dosis-400.woff) format('woff');
 }
+
 @font-face {
     font-family: 'Dosis';
     font-style: normal;
@@ -20,8 +21,10 @@
     src: local('Satisfy'), url(Satisfy-400.woff) format('woff');
 }
 
+/* -- COMMON --*/
+
 /*body {
-    cursor: url('../img/finger.png'), auto;
+cursor: url('../img/finger.png'), auto;
 }*/
 
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
@@ -37,71 +40,9 @@ body {
     height: 100% /* force the BODY element to match the height of the HTML element */
 }
 
-#landing {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    overflow: hidden;
-    z-index: -1;
-    display: table-cell;
-    vertical-align: middle;
-/*    background: rgb(207,231,250); *//* Old browsers *//*
-    background: -moz-linear-gradient(top,  rgba(207,231,250,1) 0%, rgba(74,135,238,1) 100%); *//* FF3.6+ *//*
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(207,231,250,1)), color-stop(100%,rgba(74,135,238,1))); *//* Chrome,Safari4+ *//*
-    background: -webkit-linear-gradient(top,  rgba(207,231,250,1) 0%,rgba(74,135,238,1) 100%); *//* Chrome10+,Safari5.1+ *//*
-    background: -o-linear-gradient(top,  rgba(207,231,250,1) 0%,rgba(74,135,238,1) 100%); *//* Opera 11.10+ *//*
-    background: -ms-linear-gradient(top,  rgba(207,231,250,1) 0%,rgba(74,135,238,1) 100%); *//* IE10+ *//*
-    background: linear-gradient(to bottom,  rgba(207,231,250,1) 0%,rgba(74,135,238,1) 100%); *//* W3C *//*
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cfe7fa', endColorstr='#4a87ee',GradientType=0 ); *//* IE6-9 */
-
-    background: #cfe7fa; /* Old browsers */
-    background: -moz-linear-gradient(top,  #cfe7fa 0%, #6393c1 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#cfe7fa), color-stop(100%,#6393c1)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top,  #cfe7fa 0%,#6393c1 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top,  #cfe7fa 0%,#6393c1 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top,  #cfe7fa 0%,#6393c1 100%); /* IE10+ */
-    background: linear-gradient(to bottom,  #cfe7fa 0%,#6393c1 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cfe7fa', endColorstr='#6393c1',GradientType=0 ); /* IE6-9 */
-
-
-
+.no-padding {
+    padding: 0px !important;
 }
-
-#landing div.nag {
-    width: 200px;
-    height: 200px;
-
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    text-align: center;
-}
-
-#landing div.nag img {
-    display: block;
-    margin: auto;
-    padding: 5px 0;
-}
-
-#landing div.nag img.logo {
-    width: 150px;
-}
-
-#appname {
-    font-family: 'Satisfy';
-    color: #FFF;
-    font-size: 50px;
-    padding: 20px 0;
-}
-
-
-
-
 
 .ionic-logo {
     display: block;
@@ -135,42 +76,82 @@ body {
     max-width: 70%;
 }
 
-/*.wos-grumpy-info {
-    font-size: 13px;
+.text-left {
+    text-align: left;
 }
 
-.wos-info > div {
-    padding: 0 5px !important;
+.text-right {
+    text-align: right;
 }
 
-.wos-grumpy-info .wos-avatar img {
-    width: 40px;
-    height: 40px;
-    -webkit-border-radius: 11px;
-    float: left
+.text-center {
+    text-align: center;
 }
 
-.wos-item-content .wos-media {
-    clear: both;
-}
-*/
-
-.wos-note {
-    margin-left: 10px;
-    font-size: 13px;
+.text-justify {
+    text-align: justify;
 }
 
-.wos-note img {
+/* --- Nag Screen -- */
+
+#landing {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    z-index: -1;
+    display: table-cell;
     vertical-align: middle;
+    /*    background: rgb(207,231,250); *//* Old browsers *//*
+        background: -moz-linear-gradient(top,  rgba(207,231,250,1) 0%, rgba(74,135,238,1) 100%); *//* FF3.6+ *//*
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(207,231,250,1)), color-stop(100%,rgba(74,135,238,1))); *//* Chrome,Safari4+ *//*
+        background: -webkit-linear-gradient(top,  rgba(207,231,250,1) 0%,rgba(74,135,238,1) 100%); *//* Chrome10+,Safari5.1+ *//*
+        background: -o-linear-gradient(top,  rgba(207,231,250,1) 0%,rgba(74,135,238,1) 100%); *//* Opera 11.10+ *//*
+        background: -ms-linear-gradient(top,  rgba(207,231,250,1) 0%,rgba(74,135,238,1) 100%); *//* IE10+ *//*
+        background: linear-gradient(to bottom,  rgba(207,231,250,1) 0%,rgba(74,135,238,1) 100%); *//* W3C *//*
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cfe7fa', endColorstr='#4a87ee',GradientType=0 ); *//* IE6-9 */
+
+    background: #cfe7fa; /* Old browsers */
+    background: -moz-linear-gradient(top, #cfe7fa 0%, #6393c1 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #cfe7fa), color-stop(100%, #6393c1)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #cfe7fa 0%, #6393c1 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #cfe7fa 0%, #6393c1 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #cfe7fa 0%, #6393c1 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #cfe7fa 0%, #6393c1 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cfe7fa', endColorstr='#6393c1', GradientType=0); /* IE6-9 */
+
 }
 
-#map {
-    width: 100%;
-    height: 100%;
+#landing div.nag {
+    width: 200px;
+    height: 200px;
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
 }
 
-.scroll {
-    height: 100%;
+#landing div.nag img {
+    display: block;
+    margin: auto;
+    padding: 5px 0;
+}
+
+#landing div.nag img.logo {
+    width: 150px;
+}
+
+#appname {
+    font-family: 'Satisfy';
+    color: #FFF;
+    font-size: 50px;
+    padding: 20px 0;
 }
 
 /* hide extra space in pull to refresh */
@@ -182,14 +163,26 @@ body {
     font-size: 25px;
 }
 
+/* -- MAP --*/
+#map {
+    width: 100%;
+    height: 100%;
+}
+
+.scroll {
+    height: 100%;
+}
+
+/* --- Post Page -- */
+
 .post.card {
-    margin: 0px !important;
-    padding: 0 !important;
+    margin: 5px !important;
+    /*    padding: 0 !important;*/
 }
 
 .post.card .item-body {
     padding: 0px !important;
-    border: 0 !important;
+    /* border: 0 !important;*/
 }
 
 .post.card .item-avatar {
@@ -198,7 +191,7 @@ body {
 
 .post.card .item-avatar p {
     margin: 0px !important;
-    font-size: 13px !important;
+    font-size: 14px !important;
 }
 
 .post.card .info {
@@ -218,6 +211,19 @@ body {
     float: right;
 }
 
+.posts.item-complex {
+    border: 0px !important;
+}
+
+.post .tabs-secondary {
+    background-color: #EFEFEF;
+}
+
+.post-buttons a {
+    font-size: 25px;
+}
+
+/* -- POST AS THUMBS -- */
 /* http://www.dwuser.com/education/content/creating-responsive-tiled-layout-with-pure-css/ */
 .wrap {
     overflow: hidden;
@@ -227,8 +233,8 @@ body {
 .box {
     float: left;
     position: relative;
-    width: 25%;
-    padding-bottom: 25%;
+    width: 33%;
+    padding-bottom: 33%;
 }
 
 .boxInner {
@@ -238,12 +244,14 @@ body {
         top: 10px;
         bottom: 10px;*/
     overflow: hidden;
+    padding: 2px;
 }
 
 .boxInner img {
     width: 100%;
 }
 
+/* --- Profile --- */
 .profile.card {
     margin: 5px 0 10px 0 !important;
 }
@@ -278,15 +286,14 @@ body {
     padding-left: 5px;
 }
 
-
+/* --- Camera Page --- */
 .tabs .tab-item .icon.capture {
     background-repeat: no-repeat;
     background-position: 50%;
     height: 100%;
     background-image: url('../img/capture-button.png');
-    background-size:contain;
+    background-size: contain;
 }
-
 
 #camera_img {
     overflow: hidden;
@@ -301,7 +308,33 @@ body {
     background: url('../img/overlay_big.png');
     z-index: 50;
     background-size: 100%;
-    height : 640px;
+    height: 640px;
     opacity: 0.2;
 
+}
+
+.camera-footer {
+    height: 110px;
+}
+
+.camera-footer .col .icon {
+    font-size: 40px;
+}
+
+/* -- SHARE/UPLOAD -- */
+.no-tabs.has-tabs, .no-tabs .bar-footer.has-tabs {
+    bottom: 0 !important;
+}
+
+img.caption {
+    width: 100px;
+    height: 100px;
+}
+
+input.caption {
+    padding-left: 10px;
+}
+
+label.comment {
+    align-items: flex-start
 }
