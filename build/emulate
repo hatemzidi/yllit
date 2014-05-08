@@ -1,0 +1,4 @@
+#! /bin/bash
+
+ionic emulate ios
+notify emulation done!

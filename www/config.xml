@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="prg.coenraets.sociogram" version="0.0.1" xmlns="http://www.w3.org/ns/widgets"
+<widget id="com.hatemzidi.yllit" version="0.0.1" xmlns="http://www.w3.org/ns/widgets"
         xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>yllit</name>
     <description>
-       Wall of Shame Application
+       yllit Application
     </description>
     <author email="hatem.zidi@gmail.com" href="http://hatemzidi.com/">
-        WoS Team
+        yllit Team
     </author>
     <content src="index.html"/>
     <access origin="*"/>
@@ -17,4 +17,5 @@
     <feature name="StatusBar">
         <param name="ios-package" value="CDVStatusBar" onload="true"/>
     </feature>
+
 </widget>

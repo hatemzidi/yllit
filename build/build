@@ -1,0 +1,4 @@
+#! /bin/bash
+
+ionic build ios
+notify build done!
