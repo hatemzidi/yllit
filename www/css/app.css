@@ -175,15 +175,33 @@ body {
 
 /* --- Post Page -- */
 
+.search-bar {
+    border : 0px !important;
+}
+
 .post.card {
-    margin: 5px !important;
+    margin: 2px 1px !important;
     /*    padding: 0 !important;*/
 }
 
 .post.card .item-body {
     padding: 0px !important;
     /* border: 0 !important;*/
+    position: relative;
 }
+
+.post.card .item-body a {
+    display: block;
+}
+
+.full-image {
+    display: inherit;
+}
+
+.description {
+    padding: 10px;
+}
+
 
 .post.card .item-avatar {
     padding-left: 62px;
@@ -220,7 +238,16 @@ body {
 }
 
 .post-buttons a {
-    font-size: 25px;
+    font-size: 17px;
+}
+
+.post-bottom {
+    position: absolute;
+    float: left;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    background: rgba(165, 165, 165, 0.5);
 }
 
 /* -- POST AS THUMBS -- */

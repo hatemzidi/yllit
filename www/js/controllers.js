@@ -40,6 +40,24 @@ define(['angular',
                 return true;
             };
 
+            // Triggered on a button click, or some other target
+            $scope.share = function() {
+
+                // Show the action sheet
+                $ionicActionSheet.show({
+                    buttons: [
+                        { text: 'Twitter' },
+                        { text: 'Facebook' },
+//                        { text: 'Whatever' },
+                    ],
+                    titleText: '<b>Share</b> This',
+                    buttonClicked: function(index) {
+                        return true;
+                    }
+                });
+
+            };
+
 
             $scope.doRefresh = function () {
                 $timeout(function () {

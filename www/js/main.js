@@ -36,7 +36,8 @@ require([
 
     var start = function () {
         angular.bootstrap(document, [app['name']]);
-    }
-        (document.body && device) ? start() : ionic.Platform.ready(start);
+    };
+
+    (document.body && device) ? start() : ionic.Platform.ready(start);
 
 });
