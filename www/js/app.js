@@ -3,6 +3,7 @@ define([
     'angularIonic',
     'controllers',
     'services',
+    'filters',
     'timeAgo'
 ], function (angular) {
   // Ionic WoS App
@@ -11,6 +12,7 @@ define([
       'ionic',
       'WoS.services',
       'WoS.controllers',
+      'WoS.filters',
       'yaru22.angular-timeago'
   ]);
 

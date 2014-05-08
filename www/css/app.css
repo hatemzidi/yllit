@@ -77,19 +77,19 @@ body {
 }
 
 .text-left {
-    text-align: left;
+    text-align: left !important;
 }
 
 .text-right {
-    text-align: right;
+    text-align: right !important;
 }
 
 .text-center {
-    text-align: center;
+    text-align: center !important;
 }
 
 .text-justify {
-    text-align: justify;
+    text-align: justify !important;
 }
 
 /* --- Nag Screen -- */
@@ -176,7 +176,7 @@ body {
 /* --- Post Page -- */
 
 .search-bar {
-    border : 0px !important;
+    border: 0px !important;
 }
 
 .post.card {
@@ -201,7 +201,6 @@ body {
 .description {
     padding: 10px;
 }
-
 
 .post.card .item-avatar {
     padding-left: 62px;
@@ -238,7 +237,7 @@ body {
 }
 
 .post-buttons a {
-    font-size: 17px;
+    font-size: 15px;
 }
 
 .post-bottom {
@@ -283,12 +282,15 @@ body {
     margin: 5px 0 10px 0 !important;
 }
 
-.profile.card .item-avatar {
-    padding: 0 0 0 10px;
+.profile.card p.nickname {
+    line-height: normal;
+    font-size: 25px !important;
+    color : #ACACAC;
 }
-
-.profile.card .item-avatar p {
-    font-size: 13px !important;
+.profile.card p.bio {
+    font-size: 18px !important;
+    line-height: normal;
+    color : #ACACAC;
 }
 
 .profile.card .item-avatar img {
@@ -299,14 +301,18 @@ body {
 
 .profile.card div.col {
     text-align: center;
+    color : #666;
 }
 
 .profile.card div.col i {
     font-size: 30px !important;
 }
 
-.profile.card div.col p {
-    font-size: 15px !important;
+.profile.card .bottom div.col p {
+    font-size: 25px !important;
+    color : #ACACAC;
+    line-height: normal;
+    margin: 0px;
 }
 
 .profile.card .row.bottom p {

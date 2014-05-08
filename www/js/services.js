@@ -34,11 +34,6 @@ define(['angular'], function (angular) {
 
             // Some fake testing data
             var data = [
-                { id: 6, grumpy: {id: 6, nickname: 'Grumpy 1', avatar: 'img/tom.png'}, image: 'img/cookie.jpg', location: {name: "kitchen"}, "timestamp": (new Date()).toISOString(), counter: '120', idisliked: 'yes', description: 'Furry little creatures. Obsessed with plotting assassination, but never following through on it.' },
-                { id: 7, grumpy: {id: 7,nickname: 'Foulen', avatar: 'img/house0.png'}, image: 'img/ps4.jpg', location: {name: "home"}, "timestamp": "2014-01-01T10:01:19 -01:00", counter: '0', idisliked: 'no', description: 'Lovable. Loyal almost to a fault. Smarter than they let on.' },
-                { id: 8, grumpy: {id: 8,nickname: 'MutherFkr', avatar: 'img/house1.jpg'}, image: 'img/car.jpg', location: {name: "autostara, italy"}, "timestamp": "2014-04-16T10:01:19 -01:00", counter: '504', idisliked: 'no', description: 'Everyone likes turtles.' },
-                { id: 9, grumpy: {id: 9,nickname: 'Meh', avatar: 'img/house2.png'}, image: 'img/microsoft.jpg', location: {}, "timestamp": "2014-03-21T10:01:19 -01:00", counter: '666', idisliked: 'yes', description: 'An advanced pet. Needs millions of gallons of salt water. Will happily eat you.' },
-                { id: 10, grumpy: {id: 10,nickname: 'House M.D.', avatar: 'img/house2.png'}, image: 'img/cookie.jpg', location: {}, "timestamp": "2012-04-21T10:01:19 -01:00", counter: '123213', idisliked: 'yes', description: 'An advanced pet. Needs millions of gallons of salt water. Will happily eat you.' },
 
                 {
                     "id": 0,
@@ -198,7 +193,13 @@ define(['angular'], function (angular) {
                     ],
                     "idisliked": "no",
                     "description": "Occaecat exercitation do anim ea qui ut incididunt laboris consequat cupidatat qui. Pariatur nisi reprehenderit consectetur ea adipisicing officia amet ad veniam nulla. Nulla minim minim est est aliqua est culpa dolor pariatur.\r\n"
-                }
+                },
+                { id: 6, grumpy: {id: 6, nickname: 'Grumpy 1', avatar: 'img/tom.png'}, image: 'img/cookie.jpg', location: {name: "kitchen"}, "timestamp": (new Date()).toISOString(), counter: '120', idisliked: 'yes', description: 'Furry little creatures. Obsessed with plotting assassination, but never following through on it.' },
+                { id: 7, grumpy: {id: 7,nickname: 'Foulen', avatar: 'img/house0.png'}, image: 'img/ps4.jpg', location: {name: "home"}, "timestamp": "2014-01-01T10:01:19 -01:00", counter: '0', idisliked: 'no', description: 'Lovable. Loyal almost to a fault. Smarter than they let on.' },
+                { id: 8, grumpy: {id: 8,nickname: 'MutherFkr', avatar: 'img/house1.jpg'}, image: 'img/car.jpg', location: {name: "autostara, italy"}, "timestamp": "2014-04-16T10:01:19 -01:00", counter: '504', idisliked: 'no', description: 'Everyone likes turtles.' },
+                { id: 9, grumpy: {id: 9,nickname: 'Meh', avatar: 'img/house2.png'}, image: 'img/microsoft.jpg', location: {}, "timestamp": "2014-03-21T10:01:19 -01:00", counter: '666', idisliked: 'yes', description: 'An advanced pet. Needs millions of gallons of salt water. Will happily eat you.' },
+                { id: 10, grumpy: {id: 10,nickname: 'House M.D.', avatar: 'img/house2.png'}, image: 'img/cookie.jpg', location: {}, "timestamp": "2012-04-21T10:01:19 -01:00", counter: '123213', idisliked: 'yes', description: 'An advanced pet. Needs millions of gallons of salt water. Will happily eat you.' },
+
             ];
 
             return {

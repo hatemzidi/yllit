@@ -1,4 +1,4 @@
-<ion-view title="Posts"  ng-cloak>
+<ion-view title="Posts" hide-back-button="true" ng-cloak>
 
     <ion-nav-buttons side="right">
         <button ng-click="switch('thumbs')" class="button button-icon icon ion-grid"></button>
@@ -56,14 +56,14 @@
                                         <i class="ion-more"></i>
                                     </a>
                                 </div>
-                                <div class="col col-15">
+                                <div class="col col-20">
                                     <a class="tab-item" href="#">
-                                        <i class="ion-speakerphone"></i> {{post.counter}}
+                                        <i class="ion-speakerphone"></i> {{post.counter | kilo:0}}
                                     </a>
                                 </div>
-                                <div class="col col-15">
+                                <div class="col col-20">
                                     <a class="tab-item" href="#">
-                                        <i class="ion-chatboxes"></i> {{post.counter}}
+                                        <i class="ion-chatboxes"></i> {{post.counter | kilo:0}}
                                     </a>
                                 </div>
 

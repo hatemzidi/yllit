@@ -1,17 +1,27 @@
-<ion-view title="Posts" ng-cloak>
+<ion-view title="Posts" hide-back-button="true" ng-cloak>
 
     <ion-nav-buttons side="right">
         <button ng-click="switch('grid')" class="button button-icon icon ion-image"></button>
     </ion-nav-buttons>
 
-    <ion-content has-header="true" has-tabs="true" padding="false">
+    <ion-content has-header="true" has-tabs="true" padding="false" start-y="46">
 
         <ion-refresher on-refresh="doRefresh()" refreshing-icon="ion-looping">
         </ion-refresher>
 
+        <div class="bar bar-header item-input-inset search-bar">
+            <label class="item-input-wrapper">
+                <i class="icon ion-ios7-search placeholder-icon"></i>
+                <input type="search" ng-model="cr.searchString" placeholder="search">
+            </label>
+            <button class="button button-clear" ng-if="cr.searchString" ng-click="clearFilter()">
+                <i class="icon ion-ios7-close"></i>
+            </button>
+        </div>
+
         <div class="wrap">
             <div class="box" ng-repeat="post in posts">
-                <div class="boxInner" >
+                <div class="boxInner">
                     <a href="#/tab/post/{{post.id}}"><img class="full-image" src="{{post.image}}"></a>
                 </div>
             </div>

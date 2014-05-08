@@ -46,8 +46,9 @@ define(['angular',
                 // Show the action sheet
                 $ionicActionSheet.show({
                     buttons: [
-                        { text: 'Twitter' },
-                        { text: 'Facebook' },
+                        { text: '<i class="fa fa-twitter-square"></i> Twitter' },
+                        { text: '<i class="fa fa-facebook-square"></i> Facebook' },
+                        { text: '<i class="fa fa-google-plus-square"></i> Google+' },
 //                        { text: 'Whatever' },
                     ],
                     titleText: '<b>Share</b> This',
@@ -70,11 +71,30 @@ define(['angular',
         })
 
         // get data for a given post
-        .controller('WoSPostDetailCtrl', function ($scope, $stateParams, $ionicNavBarDelegate, dataService) {
+        .controller('WoSPostDetailCtrl', function ($scope, $state,  $stateParams,  $ionicActionSheet, dataService) {
             $scope.post = dataService.get($stateParams.postId);
 
             $scope.gpMap = function (postId) {
                 $state.go('tab.map');
+            };
+
+            // Triggered on a button click, or some other target
+            $scope.share = function() {
+
+                // Show the action sheet
+                $ionicActionSheet.show({
+                    buttons: [
+                        { text: '<i class="fa fa-twitter-square"></i> Twitter' },
+                        { text: '<i class="fa fa-facebook-square"></i> Facebook' },
+                        { text: '<i class="fa fa-google-plus-square"></i> Google+' },
+//                        { text: 'Whatever' },
+                    ],
+                    titleText: '<b>Share</b> This',
+                    buttonClicked: function(index) {
+                        return true;
+                    }
+                });
+
             };
 
         })
@@ -191,7 +211,6 @@ define(['angular',
 
                 // init variables
                 $scope.data = {};
-                $scope.obj;
                 var pictureSource;   // picture source
                 var destinationType; // sets the format of returned value
                 var url;

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport"
-          content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no,minimal-ui">
+          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no,minimal-ui">
     <title>yllit</title>
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
     <link href="css/app.css" rel="stylesheet">
@@ -11,18 +11,25 @@
 
 <body>
 
-<ion-nav-bar animation="nav-title-slide-ios7"
-             class="bar-positive nav-title-slide-ios7"
+<!--<ion-nav-bar animation="nav-title-slide-ios7"
+             class="bar-positive"
              back-button-type="button-icon"
              back-button-icon="ion-arrow-left-c">
+</ion-nav-bar>-->
+
+<ion-nav-bar class="nav-title-slide-ios7 bar-positive">
+    <ion-nav-back-button class="button-icon ion-chevron-left">
+    </ion-nav-back-button>
 </ion-nav-bar>
 
 <ion-nav-view animation="slide-left-right"></ion-nav-view>
+
 
 <div id="landing">
     <div class="nag">
         <img class="logo" src="img/logo.png"/>
         <img src="img/loading.gif"/>
+
         <p id="appname">yllit</p>
 
     </div>
