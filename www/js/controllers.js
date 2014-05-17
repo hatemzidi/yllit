@@ -1,7 +1,7 @@
 define(['angular',
     'async!http://maps.google.com/maps/api/js?sensor=false!callback'
 ], function (angular) {
-    return angular.module('WoS.controllers', [])
+    return angular.module('yllit.controllers', [])
 
 
         .controller('WoSTabsCtrl', function ($scope, $state, $ionicNavBarDelegate) {
@@ -15,9 +15,13 @@ define(['angular',
         })
 
         // get all data
-        .controller('WoSPostsIndexCtrl', function ($scope, $state, $timeout, $ionicActionSheet, dataService) {
+        .controller('WoSPostsIndexCtrl', function ($scope, $state, $timeout, $rootScope, $ionicActionSheet, dataService) {
 
-            $scope.posts = dataService.all();
+            // init
+            if ($rootScope.posts == undefined) {
+                console.log ("first load");
+                $rootScope.posts = dataService.all();
+            }
 
             $scope.getMap = function () {
                 $state.go('tab.map');
@@ -62,7 +66,7 @@ define(['angular',
 
             $scope.doRefresh = function () {
                 $timeout(function () {
-                    $scope.posts = dataService.all();
+                    $rootScope.posts = dataService.all();
                     //Stop the ion-refresher from spinning
                     $scope.$broadcast('scroll.refreshComplete');
                 }, 1000);
@@ -212,9 +216,6 @@ define(['angular',
                 // init variables
                 $scope.data = {};
                 $scope.picSrc = "";
-                var sourceIsAlbum;    // picture source
-                var sourceIsCamera;   // picture source
-                var destinationType; // sets the format of returned value
                 var url;
 
                 // first clean tab
@@ -234,9 +235,6 @@ define(['angular',
                         // error handling
                         return;
                     }
-                    sourceIsAlbum = navigator.camera.PictureSourceType.PHOTOLIBRARY;
-                    sourceIsCamera = navigator.camera.PictureSourceType.CAMERA;
-                    destinationType = navigator.camera.DestinationType.FILE_URI;
                 });
 
                 // get upload URL for FORM

@@ -6,13 +6,13 @@ define([
     'filters',
     'timeAgo'
 ], function (angular) {
-  // Ionic WoS App
+  // Ionic yllit App
 
-  return angular.module('WoS', [
+  return angular.module('yllit', [
       'ionic',
-      'WoS.services',
-      'WoS.controllers',
-      'WoS.filters',
+      'yllit.services',
+      'yllit.controllers',
+      'yllit.filters',
       'yaru22.angular-timeago'
   ]);
 

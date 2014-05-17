@@ -1,5 +1,5 @@
 define(['angular'], function (angular) {
-    return angular.module('WoS.services', [])
+    return angular.module('yllit.services', [])
 
         // get upload url for file transfer (upload to http post service)
         .factory('GetUU', function () {
@@ -204,9 +204,11 @@ define(['angular'], function (angular) {
 
             return {
                 all: function () {
+                    console.log("load full timeline");
                     return data;
                 },
                 get: function (id) {
+                    console.log("load post");
                     // Simple index lookup
                     return data[id];
                 },

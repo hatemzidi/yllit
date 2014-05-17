@@ -6,7 +6,7 @@ require.config({
         angularTouch: '../lib/angular-touch/angular-touch',
         angularSanitize: '../lib/angular-sanitize/angular-sanitize',
         uiRouter: '../lib/angular-ui-router/release/angular-ui-router',
-        timeAgo : '../lib/angular-timeago/src/timeAgo',
+        timeAgo: '../lib/angular-timeago/src/timeAgo',
         ionic: '../lib/ionic/js/ionic',
         angularIonic: '../lib/ionic/js/ionic-angular',
         async: '../lib/requirejs-plugins/src/async'
@@ -36,6 +36,8 @@ require([
 
     var start = function () {
         angular.bootstrap(document, [app['name']]);
+        angular.element(document.querySelector('#landing')).empty();
+
     };
 
     (document.body && device) ? start() : ionic.Platform.ready(start);

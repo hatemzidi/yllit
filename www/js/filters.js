@@ -3,7 +3,7 @@ define(['angular', 'services'], function (angular, services) {
 
     /* Filters */
 
-    angular.module('WoS.filters', ['WoS.services'])
+    angular.module('yllit.filters', ['yllit.services'])
         .filter('interpolate', ['version', function(version) {
             return function(text) {
                 return String(text).replace(/\%VERSION\%/mg, version);
