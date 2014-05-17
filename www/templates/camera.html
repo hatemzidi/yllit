@@ -8,28 +8,31 @@
         <button class="button button-icon icon ion-close-round" ng-click="cameraCancel()"></button>
     </ion-nav-buttons>
 
-    <ion-content has-header="true" has-tabs="false" class="no-tabs">
+    <ion-content has-header="true" has-tabs="false" class="no-tabs" scroll="false">
 
-        <div id="camera_img">
-            <div id="camera_overlay"></div>
-            <img src="img/camera.jpg" id="avatar"/>
+        <div id="camera_container" class="text-center">
+            <!-- <div id="camera_overlay"></div>-->
+            <!--<img src="img/camera.jpg" id="avatar"/>-->
+            <!--<img style="width:60px;height:60px;" id="smallImage" src="{{picSrc}}" ng-show="picSrc != ''"/>-->
+            <img id="largeImage" src="{{picSrc}}" ng-show="picSrc != ''"/>
         </div>
-    </ion-content>
+
     <ion-footer-bar class="bar-dark no-tabs camera-footer">
-        <div class="row no-padding">
-            <div class="col col-center text-center">
-            <a ng-click="" class="icon ion-ios7-videocam">
-            </a>
+        <div class="row row-center no-padding">
+            <div class="col text-center" style="vertical-align: middle">
+                <a ng-click="" class="icon ion-ios7-videocam">
+                </a>
             </div>
-            <div class="col col-center text-center">
-                <a ng-click="takePicture()" class="">
+            <div class="col text-center">
+                <a ng-click="takePicture('camera')" class="">
                     <img src="img/camera-icon.png">
                 </a>
             </div>
-            <div class="col col-center text-center">
-                <a ng-click="" class="icon ion-images">
+            <div class="col text-center" style="vertical-align: middle">
+                <a ng-click="takePicture('album')" class="icon ion-images">
                 </a>
             </div>
         </div>
     </ion-footer-bar>
+    </ion-content>
 </ion-view>

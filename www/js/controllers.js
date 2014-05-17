@@ -211,7 +211,9 @@ define(['angular',
 
                 // init variables
                 $scope.data = {};
-                var pictureSource;   // picture source
+                $scope.picSrc = "";
+                var sourceIsAlbum;    // picture source
+                var sourceIsCamera;   // picture source
                 var destinationType; // sets the format of returned value
                 var url;
 
@@ -232,8 +234,8 @@ define(['angular',
                         // error handling
                         return;
                     }
-                    //pictureSource=navigator.camera.PictureSourceType.PHOTOLIBRARY;
-                    pictureSource = navigator.camera.PictureSourceType.CAMERA;
+                    sourceIsAlbum = navigator.camera.PictureSourceType.PHOTOLIBRARY;
+                    sourceIsCamera = navigator.camera.PictureSourceType.CAMERA;
                     destinationType = navigator.camera.DestinationType.FILE_URI;
                 });
 
@@ -245,14 +247,20 @@ define(['angular',
 
 
                 // take picture
-                $scope.takePicture = function () {
-                    console.log("got camera button click");
+                $scope.takePicture = function (flag) {
+                    console.log("got camera button click" + flag);
+
                     var options = {
                         quality: 50,
                         destinationType: navigator.camera.DestinationType.FILE_URI,
                         sourceType: navigator.camera.PictureSourceType.CAMERA,
                         encodingType: 0
                     };
+                    if (flag == 'album') {
+                        options.sourceType = navigator.camera.PictureSourceType.PHOTOLIBRARY;
+                    }
+
+                    console.log(options);
                     if (!navigator.camera) {
                         // error handling
                         return;
@@ -260,7 +268,7 @@ define(['angular',
                     navigator.camera.getPicture(
                         function (imageURI) {
                             console.log("got camera success ", imageURI);
-                            $scope.mypicture = imageURI;
+                            $scope.picSrc = imageURI;
                             $scope.$apply();
                         },
                         function (err) {
@@ -276,13 +284,13 @@ define(['angular',
                         // error handling no upload url
                         return;
                     }
-                    if (!$scope.mypicture) {
+                    if (!$scope.picSrc) {
                         // error handling no picture given
                         return;
                     }
                     var options = new FileUploadOptions();
                     options.fileKey = "ffile";
-                    options.fileName = $scope.mypicture.substr($scope.mypicture.lastIndexOf('/') + 1);
+                    options.fileName = $scope.picSrc.substr($scope.picSrc.lastIndexOf('/') + 1);
                     options.mimeType = "image/jpeg";
                     var params = {};
                     params.other = obj.text; // some other POST fields
@@ -290,7 +298,7 @@ define(['angular',
 
                     //console.log("new imp: prepare upload now");
                     var ft = new FileTransfer();
-                    ft.upload($scope.mypicture, encodeURI($scope.data.uploadurl), uploadSuccess, uploadError, options);
+                    ft.upload($scope.picSrc, encodeURI($scope.data.uploadurl), uploadSuccess, uploadError, options);
                     function uploadSuccess(r) {
                         // handle success like a message to the user
                     }

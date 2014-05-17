@@ -285,12 +285,13 @@ body {
 .profile.card p.nickname {
     line-height: normal;
     font-size: 25px !important;
-    color : #ACACAC;
+    color: #ACACAC;
 }
+
 .profile.card p.bio {
     font-size: 18px !important;
     line-height: normal;
-    color : #ACACAC;
+    color: #ACACAC;
 }
 
 .profile.card .item-avatar img {
@@ -301,7 +302,7 @@ body {
 
 .profile.card div.col {
     text-align: center;
-    color : #666;
+    color: #666;
 }
 
 .profile.card div.col i {
@@ -310,7 +311,7 @@ body {
 
 .profile.card .bottom div.col p {
     font-size: 25px !important;
-    color : #ACACAC;
+    color: #ACACAC;
     line-height: normal;
     margin: 0px;
 }
@@ -328,9 +329,19 @@ body {
     background-size: contain;
 }
 
-#camera_img {
+#camera_container {
     overflow: hidden;
     position: relative;
+    height: -webkit-calc(100% - 110px);
+    height: -moz-calc(100% - 110px);
+    height: calc(100% - 110px);
+    background: url('../img/camera-bg.png') center center no-repeat;
+    width: 100%;
+}
+
+#camera_background {
+    padding-top: 20%;
+    opacity: 0.4;
 }
 
 #camera_overlay {
@@ -344,6 +355,14 @@ body {
     height: 640px;
     opacity: 0.2;
 
+}
+
+#largeImage {
+    max-width: 100%;
+     max-height: 100%;
+    width: auto;
+    height: auto;
+    margin: 0 auto;
 }
 
 .camera-footer {
