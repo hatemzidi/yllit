@@ -1,7 +1,7 @@
 {
   "name": "ionic",
-  "version": "1.0.0-beta.4-nightly-2013",
-  "codename": "antimony-antelope",
+  "version": "1.0.0-beta.5b-nightly-2129",
+  "codename": "cadmium-camel",
   "homepage": "https://github.com/driftyco/ionic",
   "authors": [
     "Max Lynch <max@drifty.com>",
@@ -32,6 +32,6 @@
     "angular": "~1.2.12",
     "angular-animate": "~1.2.12",
     "angular-sanitize": "~1.2.12",
-    "angular-ui-router": "0.2.7"
+    "angular-ui-router": "0.2.10"
   }
 }

@@ -1,7 +1,6 @@
 {
   "name": "ionic",
-  "version": "1.0.0-beta.4-nightly-2013",
-  "codename": "antimony-antelope",
+  "codename": "cadmium-camel",
   "homepage": "https://github.com/driftyco/ionic",
   "authors": [
     "Max Lynch <max@drifty.com>",
@@ -32,16 +31,15 @@
     "angular": "~1.2.12",
     "angular-animate": "~1.2.12",
     "angular-sanitize": "~1.2.12",
-    "angular-ui-router": "0.2.7"
+    "angular-ui-router": "0.2.10"
   },
-  "_release": "1.0.0-beta.4-nightly-2013",
+  "_release": "20175b34bc",
   "_resolution": {
-    "type": "version",
-    "tag": "v1.0.0-beta.4-nightly-2013",
-    "commit": "2e24f312610409804f7fef54f00bcf85695ac30f"
+    "type": "branch",
+    "branch": "master",
+    "commit": "20175b34bc9be147701c77b19d6bfec964246df0"
   },
   "_source": "git://github.com/driftyco/ionic-bower.git",
-  "_target": "v1.0.0-beta.4-nightly-2013",
-  "_originalSource": "driftyco/ionic-bower",
-  "_direct": true
+  "_target": "master",
+  "_originalSource": "driftyco/ionic-bower"
 }
